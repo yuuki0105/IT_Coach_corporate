@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
 
   namespace :itcoach do
-    resource :recrutment,only: [:show]
+    resource :recruitment,only: [:show]
     resource :entry,only: [:show]
   end
 
