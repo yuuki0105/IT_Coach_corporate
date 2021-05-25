@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ItCoachCorporate</title>
+    <title>株式会社IT Coach</title>
+    <meta name=”description” content='株式会社IT Coachのコーポレイトサイトです。'>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag "application", "data-turbo-track": "reload" %>
+    <%= yield :javascripts %>
   </head>
-
   <body>
-    <%= yield %>
+    <%= render "shared/header" %>
+    <div class="mx-5 sm:mx-auto sm:max-w-screen-lg pt-16 sm:pt-20">
+      <%= yield %>
+    </div>
+    <%= render "shared/footer" %>
   </body>
 </html>
