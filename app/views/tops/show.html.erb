@@ -1,0 +1,9 @@
+<% content_for :javascripts do %>
+  <%= javascript_pack_tag "utilities/button" %>
+<% end %>
+
+<%= link_to "問い合わせ", contact_path, class: "button_gradation bg_gradation" %>
+
+<%= link_to "ITコーチ募集ページへ", itcoach_recruitment_path, class: "button_gradation bg_gradation" %>
+
+<%= link_to "採用情報サイトへ", root_path, class: "button_gradation bg_gradation" %>
