@@ -1,0 +1,18 @@
+.button_main {
+  @apply px-3.5 sm:px-5 py-3 sm:py-1.5 bg-primary border sm:border-2 border-primary text-white sm:text-base rounded-3xl sm:rounded-3xl font-medium leading-4 w-full cursor-pointer text-center block
+}
+.button_sub {
+  @apply px-3.5 sm:px-5 py-3 sm:py-1.5 text-primary border sm:border-2 border-primary sm:text-base rounded-3xl sm:rounded-3xl font-medium leading-4 w-full block text-center
+}
+
+.bg_gradation {
+  background-image: linear-gradient(93.63deg, #7775D7 0%, #A775FF 100%);
+}
+
+.button_gradation {
+  @apply px-3.5 sm:px-5 py-3 text-white rounded-3xl sm:rounded-3xl font-medium leading-4 w-full cursor-pointer text-center block
+}
+
+.button_add_form {
+  @apply block mt-4 py-2 text-primary text-base sm:text-xl font-bold
+}

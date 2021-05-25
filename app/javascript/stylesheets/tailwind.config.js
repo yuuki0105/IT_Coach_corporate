@@ -19,14 +19,9 @@ module.exports = {
         '3.5xl': '2rem',
       },
       padding: {
-        '30': '7.5rem',
+        '30': '7.5rem'
       },
     },
-    // グラデーション
-    // backgroundImage: theme => ({
-    //   ...theme('colors'),
-    //   'primary': 'linear-gradient(93.63deg, #7775D7 0%, #A775FF 100%)',
-    // }),
   },
   variants: {
     extend: {},
