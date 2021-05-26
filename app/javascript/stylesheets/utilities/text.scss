@@ -1,0 +1,12 @@
+.h1_text {
+  @apply text-3.5xl font-bold tracking-tight;
+}
+.h2_text {
+  @apply text-2xl sm:text-2xl font-bold tracking-tight;
+}
+.base_text {
+  @apply text-sm sm:text-base
+}
+.sub_text {
+  @apply text-xs text-subtext
+}
