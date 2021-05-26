@@ -5,6 +5,10 @@
   @apply text-2xl sm:text-2xl font-bold tracking-tight;
 }
 
+.h3_text {
+  @apply text-xl sm:text-2xl font-bold tracking-tight;
+}
+
 .h4_text {
   @apply text-base sm:text-xl font-bold tracking-tight;
 }
@@ -13,5 +17,5 @@
   @apply text-sm sm:text-base
 }
 .sub_text {
-  @apply text-xs text-subtext
+  @apply text-xs sm:text-sm text-subtext
 }
