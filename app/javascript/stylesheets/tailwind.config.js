@@ -8,6 +8,7 @@ module.exports = {
       },
       colors: {
         primary: '#6C6AD2',
+        primaryPale: '#F4F3FF',
         backgroundGray: '#EDEDED',
         blank: '#B4B3B3',
         borderGray:'#DFDFDF',
@@ -17,6 +18,7 @@ module.exports = {
       },
       fontSize: {
         '3.5xl': '2rem',
+        '4.5xl': '2.5rem',
       },
       padding: {
         '30': '7.5rem'

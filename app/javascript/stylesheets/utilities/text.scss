@@ -1,0 +1,21 @@
+.h1_text {
+  @apply text-2xl sm:text-4.5xl font-bold tracking-tight sm:leading-10;
+}
+.h2_text {
+  @apply text-2xl sm:text-2xl font-bold tracking-tight;
+}
+
+.h3_text {
+  @apply text-xl sm:text-2xl font-bold tracking-tight;
+}
+
+.h4_text {
+  @apply text-base sm:text-xl font-bold tracking-tight;
+}
+
+.base_text {
+  @apply text-sm sm:text-base
+}
+.sub_text {
+  @apply text-xs sm:text-sm text-subtext
+}
