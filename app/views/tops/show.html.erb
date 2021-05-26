@@ -1,6 +1,26 @@
 <% content_for :javascripts do %>
   <%= javascript_pack_tag "utilities/button" %>
+  <%= javascript_pack_tag "utilities/text" %>
 <% end %>
+
+<div class="space-y-4 sm:space-y-6 bg-backgroundGray">
+  <div class="bg-white py-12 sm:py-20 px-5 sm:px-30 text-center sm:text-left space-y-6">
+
+    <div class="sm:hidden">
+      <h2 class="text-primary h2_text">SNS・EC・WebマーケティングにプロのITコーチが伴走</h2>
+      <%= image_tag 'key_visual.png',class: "mx-auto" %>
+      <p class="base_text">「IT Coach」は<br class="sm:hidden">貴社がSNSやWebを活用し実現したいことを<br>できるようになるまで<br class="sm:hidden">プロのITコーチが伴走・支援するサービスです。</p>
+    </div>
+    <div class="hidden sm:flex">
+      <div>
+        <h2 class="text-primary h2_text">SNS・EC・WebマーケティングにプロのITコーチが伴走</h2>
+        <p class="base_text">「IT Coach」は<br class="sm:hidden">貴社がSNSやWebを活用し実現したいことを<br>できるようになるまで<br class="sm:hidden">プロのITコーチが伴走・支援するサービスです。</p>
+      </div>
+      <%= image_tag 'key_visual.png',class: "mx-auto" %>
+    </div>
+  </div>
+</div>
+
 
 <%= link_to "問い合わせ", contact_path, class: "button_gradation bg_gradation" %>
 
