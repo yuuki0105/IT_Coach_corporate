@@ -229,10 +229,67 @@
     <%= link_to "ITコーチ募集ページへ", itcoach_recruitment_path, class: "button_gradation bg_gradation" %>
   </div>
   <%# ITコーチ募集ここまで　%>
+
   <div class="bg-white py-12 sm:py-20 px-5 sm:px-30 space-y-6 sm:space-y-16 text-center">
     <h2 class="text-primary h2_text">採用情報</h2>
     <h4 class="h4_text text-left sm:text-center">COO、Webコンサルタント 、ECコンサルタント、Webマーケター、Webディレクター、Webインターンを募集！</h4>
     <%= link_to "採用情報サイトへ", root_path, class: "button_gradation bg_gradation" %>
+  </div>
+  <%# 採用情報ここまで　%>
+
+  <div class="bg-white py-12 sm:py-20 px-5 sm:px-30 space-y-6 sm:space-y-16 text-center">
+    <h2 class="text-primary h2_text">企業概要</h2>
+
+    <div class="space-y-6 sm:space-y-10">
+      <h3 class="h3_text">ミッション</h3>
+        <h4 class="h4_text">「誰もがITで自己表現できる世界を」</h4>
+    </div>
+
+    <div class="space-y-6 sm:space-y-10">
+      <h3 class="h3_text">企業概要</h3>
+
+      <dl class="text-left">
+        <div class="flex border-t border-blank py-4">
+          <dt class="base_text font-bold w-3/12 sm:w-2/12">会社名</dt>
+          <dd class="base_text w-9/12 sm:w-10/12">株式会社IT Coach</dt>
+        </div>
+        <div class="flex border-t border-blank py-4">
+          <dt class="base_text font-bold w-3/12 sm:w-2/12">設立</dt>
+          <dd class="base_text w-9/12 sm:w-10/12">2019年6月</dt>
+        </div>
+        <div class="flex border-t border-blank py-4">
+          <dt class="base_text font-bold w-3/12 sm:w-2/12">資本金</dt>
+          <dd class="base_text w-9/12 sm:w-10/12">5,000,000円</dt>
+        </div>
+        <div class="flex border-t border-b border-blank py-4">
+          <dt class="base_text font-bold w-3/12 sm:w-2/12">事業内容</dt>
+          <dd class="base_text w-9/12 sm:w-10/12">IT・Web活用のコーチ</dt>
+        </div>
+      </dl>
+
+      <div class="flex justify-between text-left">
+        <div class="flex items-center space-x-4">
+          <%= image_tag 'ceo.png',class: "rounded-full" %>
+          <div class="space-y-2 sm:space-y-3">
+            <p class="base_text">代表取締役 <br class="sm:hidden">小松 遊気</p>
+            <p class="base_text text-left hidden sm:block">ベンチャー企業にてIT・ECコンサルティング事業に1年5ヶ月携わる。<br>リクルートにてHRやWeb制作事業に6年11ヶ月従事(クライアントのwebサイトの受託制作ディレクタ）その後、2019年6月に同社を設立。</p>
+          </div>
+        </div>
+        <div class="flex items-end space-x-4">
+          <%= link_to "https://twitter.com/komatsu_0105" do %>
+            <div class="bg-twitter rounded-full p-2 inline-block">
+              <%= image_tag 'twitter_logo.svg',class: "w-6 h-6 p-0.5" %>
+            </div>
+          <% end %>
+          <%= link_to "https://note.com/komatsu0105" do %>
+            <div class="bg-note rounded-full p-2 inline-block">
+              <%= image_tag 'note_logo.svg',class: "w-6 h-6 p-0.5" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <p class="base_text text-left sm:hidden">ベンチャー企業にてIT・ECコンサルティング事業に1年5ヶ月携わる。リクルートにてHRやWeb制作事業に6年11ヶ月従事(クライアントのwebサイトの受託制作ディレクタ）その後、2019年6月に同社を設立。</p>
+    </div>
   </div>
 
 </div>
