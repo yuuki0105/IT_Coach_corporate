@@ -1,6 +1,7 @@
 <% content_for :javascripts do %>
   <%= javascript_pack_tag "utilities/button" %>
   <%= javascript_pack_tag "utilities/text" %>
+  <%= javascript_pack_tag "utilities/bg_textbox" %>
 <% end %>
 
 <div class="space-y-4 sm:space-y-6 bg-backgroundGray">
@@ -39,8 +40,8 @@
       </div>
     </div>
     <h4 class="h4_text text-primary text-center">・IT Coachならプロに習いながら社内にノウハウが残せる！・外注先に支払っていた膨大なコストを削減できる！</h4>
-
   </div>
+  <%# 悩みここまで　%>
 
   <div class="bg-white py-12 sm:py-20 px-5 sm:px-30 sm:text-left space-y-8 sm:space-y-16">
     <div>
@@ -51,16 +52,16 @@
       <div class="space-y-6">
         <h3 class="h3_text">対応ジャンル</h3>
         <div class="space-y-6 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-10">
-          <div class="bg-primaryPale rounded">
+          <div class="bg_primaryPale_textbox">
             <h4 class="h4_text">SNSマーケティング</h4>
           </div>
-          <div class="bg-primaryPale rounded">
+          <div class="bg_primaryPale_textbox">
             <h4 class="h4_text">EC・ネットショップ</h4>
           </div>
-          <div class="bg-primaryPale rounded">
+          <div class="bg_primaryPale_textbox">
             <h4 class="h4_text">Webマーケティング</h4>
           </div>
-          <div class="bg-primaryPale rounded">
+          <div class="bg_primaryPale_textbox">
             <h4 class="h4_text">Web制作・開発</h4>
           </div>
         </div>
@@ -152,7 +153,7 @@
     <div>
       <div class="space-y-6">
         <h3 class="h3_text text-center">料金</h3>
-        <h4 class="h4_text bg-primaryPale p-3 text-center rounded">ニーズに応じコーチをアサインし見積もり<br>（最低発注単価：月20万円〜）</h4>
+        <h4 class="h4_text bg_primaryPale_textbox p-3 text-center">ニーズに応じコーチをアサインし見積もり<br>（最低発注単価：月20万円〜）</h4>
         <div class="sm:space-y-0 sm:grid sm:grid-cols-3 sm:gap-10">
           <div class="border-t sm:border-b border-blank space-y-2 py-4">
             <p class="base_text font-bold">ケース①</p>
@@ -201,28 +202,40 @@
     <div class="text-center space-y-6">
       <h3 class="h3_text text-center">流れ</h3>
       <div class="space-y-2">
-        <div class="bg-primaryPale base_text p-2 rouded-sm">問い合わせ</div>
+        <div class="bg_primaryPale_textbox base_text p-2">問い合わせ</div>
         <%= image_tag 'allow.svg',class: "mx-auto"  %>
-        <div class="bg-primaryPale base_text p-2 rouded-sm">ヒアリング</div>
+        <div class="bg_primaryPale_textbox base_text p-2">ヒアリング</div>
         <%= image_tag 'allow.svg',class: "mx-auto" %>
-        <div class="bg-primaryPale base_text p-2">ご提案・見積もり</div>
+        <div class="bg_primaryPale_textbox base_text p-2">ご提案・見積もり</div>
         <%= image_tag 'allow.svg',class: "mx-auto" %>
-        <div class="bg-primaryPale base_text p-2">契約・サービス提供</div>
+        <div class="bg_primaryPale_textbox base_text p-2">契約・サービス提供</div>
       </div>
 
     </div>
 
-
     <%= link_to "問い合わせ", contact_path, class: "button_gradation bg_gradation" %>
 
-
   </div>
+  <%# サービスここまで　%>
+
+  <div class="bg-white py-12 sm:py-20 px-5 sm:px-30 sm:text-left space-y-6 sm:space-y-16 text-center">
+    <h2 class="text-primary h2_text text-center">ITコーチ募集</h2>
+    <div class="space-y-4">
+      <h3 class="h3_text">SNS/EC/Webスキルを活かして稼げるコーチになりませんか？</h3>
+      <%= image_tag 'key_visual.png',class: "mx-auto" %>
+      <p class="base_text">「SNS運用・マーケティング」<br class="sm:hidden">「EC・ネットショップ構築・運用」<br>「Webマーケティング」<br class="sm:hidden">「Web制作・開発」<br>のいずれかのスキルをお持ちで<br>ビジネスマナー・コミュニケーション力のある方へ</p>
+      <h4 class="bg_primaryPale_textbox h4_text p-2 text-center">副業・業務委託で始められ<br class="sm:hidden">最低時給5000円以上〜の報酬が得られる<br>プロのコーチになりませんか？</h4>
+    </div>
+    <%= link_to "ITコーチ募集ページへ", itcoach_recruitment_path, class: "button_gradation bg_gradation" %>
+  </div>
+  <%# ITコーチ募集ここまで　%>
+
 
 </div>
 
 
 
 
-<%= link_to "ITコーチ募集ページへ", itcoach_recruitment_path, class: "button_gradation bg_gradation" %>
+
 
 <%= link_to "採用情報サイトへ", root_path, class: "button_gradation bg_gradation" %>
