@@ -51,16 +51,16 @@
       <div class="space-y-6">
         <h3 class="h3_text">対応ジャンル</h3>
         <div class="space-y-6 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-10">
-          <div class="bg-primaryPale">
+          <div class="bg-primaryPale rounded">
             <h4 class="h4_text">SNSマーケティング</h4>
           </div>
-          <div class="bg-primaryPale">
+          <div class="bg-primaryPale rounded">
             <h4 class="h4_text">EC・ネットショップ</h4>
           </div>
-          <div class="bg-primaryPale">
+          <div class="bg-primaryPale rounded">
             <h4 class="h4_text">Webマーケティング</h4>
           </div>
-          <div class="bg-primaryPale">
+          <div class="bg-primaryPale rounded">
             <h4 class="h4_text">Web制作・開発</h4>
           </div>
         </div>
@@ -110,7 +110,7 @@
       <div class="space-y-6">
         <h3 class="h3_text text-center">実績</h3>
         <div class="space-y-6 sm:space-y-0 sm:grid sm:grid-cols-3 sm:gap-10">
-          <div class="bg-primaryPale space-y-4 p-3 sm:p-4">
+          <div class="bg-primaryPale space-y-4 p-3 sm:p-4 rounded">
             <div class="flex items-center space-x-4">
               <%= image_tag 'problem.png',class: "rounded-full" %>
               <div class="space-y-2 sm:space-y-3">
@@ -121,7 +121,7 @@
             <p class="base_text font-bold">Web系新規事業にあたり企画・ワイヤーフレーム制作に課題がありました</p>
             <p class="base_text">IT Coachに依頼することで、自社がやりたかったことの言語化・それを実際に企画に落とし込み、ワイヤーフレーム制作までできました。そこからの詳細のデザイン制作を支援してくれるプロのデザイナーもアサインいただき感謝しています。</p>
           </div>
-          <div class="bg-primaryPale space-y-4 p-3 sm:p-4">
+          <div class="bg-primaryPale space-y-4 p-3 sm:p-4 rounded">
             <div class="flex items-center space-x-4">
               <%= image_tag 'problem.png',class: "rounded-full" %>
               <div class="space-y-2 sm:space-y-3">
@@ -132,7 +132,7 @@
             <p class="base_text font-bold">Twitter・noteを活用したブランディングをしたい</p>
             <p class="base_text">noteの立ち上げから記事の執筆を支援していただき、半年間で30記事をアップすることができました。また、そこをみてくださったTwitterから問い合わせがきて、顧客獲得ができました。</p>
           </div>
-          <div class="bg-primaryPale space-y-4 p-3 sm:p-4">
+          <div class="bg-primaryPale space-y-4 p-3 sm:p-4 rounded">
             <div class="flex items-center space-x-4">
               <%= image_tag 'problem.png',class: "rounded-full" %>
               <div class="space-y-2 sm:space-y-3">
@@ -152,7 +152,7 @@
     <div>
       <div class="space-y-6">
         <h3 class="h3_text text-center">料金</h3>
-        <h4 class="h4_text bg-primaryPale p-3 text-center">ニーズに応じコーチをアサインし見積もり<br>（最低発注単価：月20万円〜）</h4>
+        <h4 class="h4_text bg-primaryPale p-3 text-center rounded">ニーズに応じコーチをアサインし見積もり<br>（最低発注単価：月20万円〜）</h4>
         <div class="sm:space-y-0 sm:grid sm:grid-cols-3 sm:gap-10">
           <div class="border-t sm:border-b border-blank space-y-2 py-4">
             <p class="base_text font-bold">ケース①</p>
@@ -198,13 +198,30 @@
       </div>
     </div>
 
+    <div class="text-center space-y-6">
+      <h3 class="h3_text text-center">流れ</h3>
+      <div class="space-y-2">
+        <div class="bg-primaryPale base_text p-2 rouded-sm">問い合わせ</div>
+        <%= image_tag 'allow.svg',class: "mx-auto"  %>
+        <div class="bg-primaryPale base_text p-2 rouded-sm">ヒアリング</div>
+        <%= image_tag 'allow.svg',class: "mx-auto" %>
+        <div class="bg-primaryPale base_text p-2">ご提案・見積もり</div>
+        <%= image_tag 'allow.svg',class: "mx-auto" %>
+        <div class="bg-primaryPale base_text p-2">契約・サービス提供</div>
+      </div>
+
+    </div>
+
+
+    <%= link_to "問い合わせ", contact_path, class: "button_gradation bg_gradation" %>
+
 
   </div>
 
 </div>
 
 
-<%= link_to "問い合わせ", contact_path, class: "button_gradation bg_gradation" %>
+
 
 <%= link_to "ITコーチ募集ページへ", itcoach_recruitment_path, class: "button_gradation bg_gradation" %>
 
