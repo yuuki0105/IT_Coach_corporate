@@ -6,6 +6,30 @@
 
   <%= form.label :name %>
   <%= form.text_field :name, class: "text_field" %>
+  <%= form.label :company %>
+  <%= form.text_field :company, class: "text_field" %>
+  <%= form.label :roll %>
+  <%= form.text_field :roll, class: "text_field" %>
+  <%= form.label :email %>
+  <%= form.text_field :email, class: "text_field" %>
+  <%= form.label :telephone %>
+  <%= form.text_field :telephone, class: "text_field" %>
+  <%= form.label :will %>
+  <%= form.text_field :will, class: "text_field" %>
+  <%= form.label :bughet %>
+  <%= form.number_field :bughet, class: "number_field" %>
+  <%= form.label :tech_ability %>
+  <%= form.number_field :tech_ability, class: "text_field" %>
+  <%= form.label :business_manner %>
+  <%= form.number_field :business_manner, class: "text_field" %>
+  <%= form.label :communication_ability %>
+  <%= form.number_field :communication_ability, class: "text_field" %>
+  <%= form.label :other %>
+  <%= form.text_field :other, class: "text_field" %>
+  <%= form.label :privacy %>
+  <%= form.text_field :privacy, class: "text_field" %>
+  <%= form.label :category_ids %>
+  <%= form.text_field :category_ids, class: "text_field" %>
 
   <% BigCategory.all.each do |big_category| %>
     <div class="mt-4">

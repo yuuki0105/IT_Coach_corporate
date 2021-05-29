@@ -1,20 +1,32 @@
 class Forms::ContactForm
   include ActiveModel::Model
-  attr_accessor :skill_ids, :action, :current_account
+  attr_accessor :category_ids, :action, :current_account
 
 
-  attr_accessor :name, :skill_ids
+  attr_accessor :name, :company, :roll, :email, :telephone, :will, :bughet, :tech_ability, :business_manner, :communication_ability, :other, :privacy, :category_ids
 
   def set_attributes(attributes)
     self.name = attributes[:name]
-    self.skill_ids = attributes[:skill_ids].reject(&:blank?)
+    self.company = attributes[:company]
+    self.roll = attributes[:roll]
+    self.email = attributes[:email]
+    self.telephone = attributes[:telephone]
+    self.will = attributes[:will]
+    self.bughet = attributes[:bughet]
+    self.tech_ability = attributes[:tech_ability]
+    self.business_manner = attributes[:business_manner]
+    self.communication_ability = attributes[:communication_ability]
+    self.other = attributes[:other]
+    self.privacy = attributes[:privacy]
+    self.category_ids = attributes[:category_ids]
+    self.category_ids = attributes[:category_ids].reject(&:blank?)
   end
 
   def save
     ApplicationRecord.transaction do
       contact = Contact.create(name: name)
-      skills.each do |skill|
-        contact.contact_skills.create(skill: skill)
+      categories.each do |category|
+        contact.contact_categories.create(category: category)
       end
     end
   end
