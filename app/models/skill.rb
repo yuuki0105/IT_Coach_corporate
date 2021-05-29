@@ -3,10 +3,10 @@
 # Table name: skills
 #
 #  id                :bigint           not null, primary key
+#  skill_category_id :bigint
 #  name              :string(255)      not null
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
-#  skill_category_id :bigint
 #
 # Indexes
 #
@@ -17,7 +17,7 @@
 #  fk_rails_...  (skill_category_id => skill_categories.id)
 #
 class Skill < ApplicationRecord
-  include Auditable
+  belongs_to :skill_category
 
   # Relations
 

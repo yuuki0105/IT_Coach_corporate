@@ -8,7 +8,7 @@
 #  updated_at :datetime         not null
 #
 class SkillCategory < ApplicationRecord
-  include Auditable
+  has_many :skills
 
   # Relations
 
