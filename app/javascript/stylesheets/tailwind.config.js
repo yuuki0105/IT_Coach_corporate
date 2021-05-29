@@ -15,6 +15,7 @@ module.exports = {
         subtext: '#858484',
         facebook: '#1877F2',
         twitter: '#1D9BF0',
+        note: '#41C9B4',
       },
       fontSize: {
         '3.5xl': '2rem',
@@ -22,6 +23,9 @@ module.exports = {
       },
       padding: {
         '30': '7.5rem'
+      },
+      lineHeight:{
+        '12': '3rem'
       },
     },
   },
