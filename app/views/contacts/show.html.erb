@@ -2,4 +2,18 @@
   <%= javascript_pack_tag "utilities/button" %>
 <% end %>
 
+<%= form_with model: @form, url: contact_path, local: true, method: :post do |form| %>
+
+  <%= form.label :name %>
+  <%= form.text_field :name, class: "text_field" %>
+
+  <% SkillCategory.all.each do |skill_category| %>
+    <div class="mt-4">
+      <h3><%= skill_category.name %></h3>
+      <%= form.collection_check_boxes :skill_ids, skill_category.skills, :id, :name %>
+    </div>
+  <% end %>
+
+  <%= form.submit "送信する", class: "button_gradation bg_gradation" %>
+<% end %>
 <button class="button_gradation bg_gradation">送信する</button>

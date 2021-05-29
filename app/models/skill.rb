@@ -19,6 +19,8 @@
 class Skill < ApplicationRecord
   belongs_to :skill_category
 
+  has_many :contacts, through: :contact_skills
+  has_many :contact_skills
   # Relations
 
   # Validations

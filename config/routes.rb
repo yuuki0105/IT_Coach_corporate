@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root "tops#show"
   resource :top,only: [:show]
 
-  resource :contact,only: [:show]
+  resource :contact,only: [:show, :create]
 
 
   namespace :itcoach do
