@@ -222,10 +222,15 @@
 
   <div class="bg-white py-12 sm:py-20 px-5 sm:px-30 space-y-6 sm:space-y-16 text-center">
     <h2 class="text-primary h2_text">ITコーチ募集</h2>
-    <div class="space-y-4">
-      <h3 class="h3_text">SNS/EC/Webスキルを活かして稼げるコーチになりませんか？</h3>
-      <%= image_tag 'coach_recruitment.png',class: "mx-auto" %>
-      <p class="base_text">「SNS運用・マーケティング」<br class="sm:hidden">「EC・ネットショップ構築・運用」<br>「Webマーケティング」<br class="sm:hidden">「Web制作・開発」<br>のいずれかのスキルをお持ちで<br>ビジネスマナー・コミュニケーション力のある方へ</p>
+    <div class="space-y-4 sm:space-y-16">
+      <div class="sm:flex space-y-4 sm:space-y-0">
+        <div class="sm:space-y-10">
+          <h3 class="h3_text text-center sm:text-left">SNS/EC/Webのスキルを活かして稼げるコーチになりませんか？</h3>
+          <p class="hidden sm:block base_text text-left">「SNS運用・マーケティング」<br>「EC・ネットショップ構築・運用」<br>「Webマーケティング」<br>「Web制作・開発」<br>のいずれかのスキルをお持ちで<br>ビジネスマナー・コミュニケーション力のある方へ</p>
+        </div>
+        <%= image_tag 'coach_recruitment.png',class: "mx-auto sm:mr-0 sm:w-2/5" %>
+        <p class="sm:hidden base_text">「SNS運用・マーケティング」<br>「EC・ネットショップ構築・運用」<br>「Webマーケティング」<br>「Web制作・開発」<br>のいずれかのスキルをお持ちで<br>ビジネスマナー・コミュニケーション力のある方へ</p>
+      </div>
       <h4 class="bg_primaryPale_textbox h4_text p-2">副業・業務委託で始められ<br class="sm:hidden">最低時給5000円以上〜の報酬が得られる<br>プロのコーチになりませんか？</h4>
     </div>
     <%= link_to "ITコーチ募集ページへ", itcoach_recruitment_path, class: "button_gradation bg_gradation" %>
