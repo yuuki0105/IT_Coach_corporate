@@ -7,16 +7,16 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-skill_categories = [
-  {category_name: "SNSマーケ", skills: ["FB", "Twitter"]},
-  {category_name: "EC", skills: ["shopify"]},
-  {category_name: "Webマーケ", skills: ["seo"]},
-  {category_name: "Web制作", skills: ["wp", "nocode"]}
+big_categories = [
+  {big_category: "SNSマーケ", categories: ["FB", "Twitter"]},
+  {big_category: "EC・ネットショップ", categories: ["shopify"]},
+  {big_category: "Webマーケ", categories: ["seo"]},
+  {big_category: "Web制作", categories: ["wp", "nocode"]}
 ]
 
-skill_categories.each do |skill_category|
-  category = SkillCategory.find_or_create_by(name: skill_category[:category_name])
-  skill_category[:skills].each do |skill|
-    category.skills.find_or_create_by(name: skill)
+big_categories.each do |big_category|
+  category = BigCategory.find_or_create_by(name: big_category[:big_category])
+  big_category[:categories].each do |category_name|
+    category.categories.find_or_create_by(name: category_name)
   end
 end

@@ -7,10 +7,10 @@
   <%= form.label :name %>
   <%= form.text_field :name, class: "text_field" %>
 
-  <% SkillCategory.all.each do |skill_category| %>
+  <% BigCategory.all.each do |big_category| %>
     <div class="mt-4">
-      <h3><%= skill_category.name %></h3>
-      <%= form.collection_check_boxes :skill_ids, skill_category.skills, :id, :name %>
+      <h3><%= big_category.name %></h3>
+      <%= form.collection_check_boxes :category_ids, big_category.categories, :id, :name %>
     </div>
   <% end %>
 
