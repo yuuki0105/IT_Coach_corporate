@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   root "tops#show"
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+
   resource :top,only: [:show]
 
   resource :contact,only: [:show, :create]
