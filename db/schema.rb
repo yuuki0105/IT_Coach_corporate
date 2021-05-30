@@ -10,12 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_29_153446) do
+ActiveRecord::Schema.define(version: 2021_05_30_035203) do
 
   create_table "big_categories", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "careers", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "entry_id", null: false
+    t.string "organization", null: false
+    t.string "role", null: false
+    t.date "start_month", null: false
+    t.date "end_month"
+    t.boolean "ongoing", default: false, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["entry_id"], name: "index_careers_on_entry_id"
   end
 
   create_table "categories", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -61,15 +73,36 @@ ActiveRecord::Schema.define(version: 2021_05_29_153446) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "entries", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "email", null: false
+    t.string "telephone", null: false
+    t.text "specialty", null: false
+    t.boolean "privacy", default: false, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "portfolios", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "entry_id", null: false
+    t.string "title", null: false
+    t.string "url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["entry_id"], name: "index_portfolios_on_entry_id"
+  end
+
   create_table "source_routes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "careers", "entries"
   add_foreign_key "categories", "big_categories"
   add_foreign_key "contact_categories", "categories"
   add_foreign_key "contact_categories", "contacts"
   add_foreign_key "contact_source_routes", "contacts"
   add_foreign_key "contact_source_routes", "source_routes"
+  add_foreign_key "portfolios", "entries"
 end
