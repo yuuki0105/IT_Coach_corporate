@@ -1,5 +1,86 @@
 <% content_for :javascripts do %>
+  <%= javascript_pack_tag "utilities/text" %>
   <%= javascript_pack_tag "utilities/button" %>
+  <%= javascript_pack_tag "utilities/form" %>
 <% end %>
 
-<button class="button_gradation bg_gradation">送信する</button>
+<div class="space-y-4 sm:space-y-6 bg-backgroundGray pt-4 sm:pt-6 pb-20 sm:pb-30">
+  <div class="py-12 sm:py-20 bg-white px-5 sm:px-30">
+    <div class="text-center">
+      <h1 class="h1_text">問い合わせ</h1>
+      <p class="base_text mt-8 sm:mt-6">サービスにご興味をもっていただきありがとうございます。以下のフォームよりご入力ください。</p>
+      <p class="sub_text mt-3">※すべて必須入力（「その他」の項目を除く）</p>
+    </div>
+
+    <%= form_with model: @form, url: contact_path, local: true, method: :post, class: "space-y-8" do |form| %>
+
+      <div class="space-y-4">
+        <%= form.label :name, "名前", class: "form_label" %>
+        <%= form.text_field :name, placeholder: "名前", class: "text_field w-full sm:w-6/12" %>
+      </div>
+      <div class="space-y-4">
+        <%= form.label :company, "会社名", class: "form_label" %>
+        <%= form.text_field :company, placeholder: "会社名", class: "text_field w-full sm:w-6/12" %>
+      </div>
+      <div class="space-y-4">
+        <%= form.label :roll, "役職", class: "form_label" %>
+        <%= form.text_field :roll, placeholder: "役職", class: "text_field w-full sm:w-6/12" %>
+      </div>
+      <div class="space-y-4">
+        <%= form.label :email, "メールアドレス", class: "form_label" %>
+        <%= form.text_field :email, placeholder: "メールアドレス", class: "text_field w-full sm:w-6/12" %>
+      </div>
+      <div class="space-y-4">
+        <%= form.label :telephone, "電話番号", class: "form_label" %>
+        <%= form.text_field :telephone, placeholder: "電話番号", class: "text_field w-full sm:w-6/12" %>
+      </div>
+
+      <div>
+        <label class="form_label">サービスを知ったきっかけ</label>
+        <span class="sub_text">（複数選択可）</span>
+      </div>
+
+      <div>
+        <label class="form_label">ITコーチに相談したいジャンル</label>
+        <span class="sub_text">（複数選択可）</span>
+        <% BigCategory.all.each do |big_category| %>
+          <div class="space-y-4">
+            <label class="base_text"><%= big_category.name %></label>
+            <%= form.collection_check_boxes :category_ids, big_category.categories, :id, :name %>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="space-y-4">
+        <%= form.label :will, "ITコーチを活用し実現したいこと", class: "form_label" %>
+        <%= form.text_area :will, placeholder: "実現したいこと", class: "text_field w-full sm:w-6/12" %>
+      </div>
+      <div class="space-y-4">
+        <%= form.label :bughet, "予算", class: "form_label" %>
+        <span class="sub_text">（SNS・EC・Webの制作・開発・広告に関する月額予算目安）</span>
+        <%= form.number_field :bughet, class: "number_field" %>
+      </div>
+      <div class="space-y-4">
+        <label class="form_label">ITコーチに求める能力</label>
+        <%= form.label :tech_ability, class: "form_label" %>
+        <%= form.number_field :tech_ability, class: "text_field" %>
+        <%= form.label :business_manner, class: "form_label" %>
+        <%= form.number_field :business_manner, class: "text_field" %>
+        <%= form.label :communication_ability, class: "form_label" %>
+        <%= form.number_field :communication_ability, class: "text_field" %>
+      </div>
+      <div class="space-y-4">
+        <%= form.label :other, "その他", class: "form_label" %>
+        <%= form.text_area :other, placeholder: "その他問い合わせ事項がありましたらご記入ください。", class: "text_field w-full sm:w-6/12" %>
+      </div>
+      <div class="space-y-4">
+        <%= form.label :privacy, "プライバシーポリシーに同意する",  class: "form_label" %>
+        <%= form.check_box :privacy, class: "text_field" %>
+        <p class="sub_text"><%= link_to "プライバシーポリシーはコチラ", privacy_path %></p>
+      </div>
+
+      <%= form.submit "送信する", class: "button_gradation bg_gradation" %>
+    <% end %>
+
+  </div>
+</div>

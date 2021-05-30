@@ -1,5 +1,74 @@
 <% content_for :javascripts do %>
+  <%= javascript_pack_tag "utilities/text" %>
   <%= javascript_pack_tag "utilities/button" %>
 <% end %>
 
-<%= link_to "エントリーフォームへ", itcoach_entry_path, class: "button_gradation bg_gradation" %>
+<div class="space-y-4 sm:space-y-6 bg-backgroundGray pt-4 sm:pt-6 pb-20 sm:pb-30">
+  <div class="py-12 sm:py-20 bg-white px-5 sm:px-30">
+
+    <div class="space-y-8">
+
+      <h1 class="h1_text text-center">ITコーチ募集</h1>
+
+      <div class="space-y-6">
+        <h2 class="h2_text text-center">コーチの仕事</h2>
+        <div class="bg-primaryPale space-y-4 py-6 px-4 rounded">
+          <h4 class="h4_text text-primary text-center">クライアントは法人が中心</h4>
+          <p class="base_text">SNS/EC/Web制作・開発・マーケティング/の戦略策定・人員のアサイン・制作開発・広告宣伝・運用などに困っている法人へオンラインでコーチングを行います。</p>
+        </div>
+        <div class="bg-primaryPale space-y-4 py-6 px-4 rounded">
+          <h4 class="h4_text text-primary text-center">案件ごとの業務委託契約</h4>
+          <p class="base_text">就職・社員といった形態での募集ではなく、クライアント案件ごとの業務委託契約（準委任型）となります。案件を受けるか否かは契約する前にご選択いただけます。</p>
+        </div>
+        <div class="bg-primaryPale space-y-4 py-6 px-4 rounded">
+          <h4 class="h4_text text-primary text-center">報酬は時給制</h4>
+          <p class="base_text">月額や納品型ではなく、時給のため「やればやった分だけ」の報酬が得られます。（月々での上限時間設定あり）</p>
+        </div>
+        <div class="bg-primaryPale space-y-4 py-6 px-4 rounded">
+          <h4 class="h4_text text-primary text-center">審査制による報酬水準担保</h4>
+          <p class="base_text">審査に合格したコーチのみが教えるため、最低時給5000円以上〜の報酬体系となっています。求める水準は低くはないですが、合格者には報酬水準を担保しています。</p>
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        <h2 class="h2_text text-center">コーチ審査要件</h2>
+        <div class="space-y-6">
+          <div class="space-y-2">
+            <h4 class="h4_text">1.ITスキル</h4>
+            <p class="base_text">　以下いずれかのスキル・経験を保有する方<br>「SNS運用・マーケティング」<br>「EC・ネットショップ構築・運用」<br>「Webマーケティング」<br>「Web制作・開発」</p>
+          </div>
+          <div class="space-y-2">
+            <h4 class="h4_text">2.マナー</h4>
+            <p class="base_text">標準的なビジネスマナー</p>
+          </div>
+          <div class="space-y-2">
+            <h4 class="h4_text">3.コミュニケーション能力</h4>
+            <p class="base_text">一定水準のコミュニケーション能力</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        <h2 class="h2_text text-center">流れ</h2>
+        <div class="space-y-2 text-center">
+          <div class="bg_primaryPale_textbox base_text p-2">エントリーフォームより情報入力</div>
+          <%= image_tag 'allow.svg',class: "mx-auto"  %>
+          <div class="bg_primaryPale_textbox base_text p-2">審査面談</div>
+          <%= image_tag 'allow.svg',class: "mx-auto" %>
+          <div class="bg_primaryPale_textbox base_text p-2">案件アサイン</div>
+          <%= image_tag 'allow.svg',class: "mx-auto" %>
+          <div class="bg_primaryPale_textbox base_text p-2">契約締結</div>
+          <%= image_tag 'allow.svg',class: "mx-auto" %>
+          <div class="bg_primaryPale_textbox base_text p-2">稼働開始</div>
+        </div>
+        <p class="sub_text">※審査があります。<br>（エントリー情報を基に書類審査、面談を基に人物審査）</p>
+      </div>
+
+      <div class="text-center">
+        <%= link_to "エントリーフォームへ", itcoach_entry_path, class: "button_gradation bg_gradation" %>
+      </div>
+
+    </div>
+  </div>
+</div>
+

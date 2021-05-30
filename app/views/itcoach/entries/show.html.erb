@@ -1,5 +1,64 @@
 <% content_for :javascripts do %>
+  <%= javascript_pack_tag "utilities/text" %>
   <%= javascript_pack_tag "utilities/button" %>
+  <%= javascript_pack_tag "utilities/form" %>
 <% end %>
 
-<button class="button_gradation bg_gradation">送信する</button>
+<div class="space-y-4 sm:space-y-6 bg-backgroundGray pt-4 sm:pt-6 pb-20 sm:pb-30">
+  <div class="py-12 sm:py-20 bg-white px-5 sm:px-30">
+    <div>
+      <h1 class="h1_text text-center">ITコーチエントリー</h1>
+      <p class="base_text mt-6">ご興味をもっていただきありがとうございます。<br class="sm:hidden">以下のフォームよりご入力ください。</p>
+      <div class="space-y-2 mt-4">
+        <p class="sub_text">※すべて必須記入項目となります。</p>
+        <p class="sub_text">※書面審査結果は、エントリーフォームへの入力後1週間以内に登録メールアドレスへお送りします。</p>
+        <p class="sub_text">※不合格の場合も審査連絡から90日後に再審査が可能です。</p>
+      </div>
+
+      <%= form_with model: @form, url: contact_path, local: true, method: :post, class: "space-y-8" do |form| %>
+
+        <div class="space-y-4">
+          <%= form.label :name, "名前", class: "form_label" %>
+          <%= form.text_field :name, placeholder: "名前", class: "text_field w-full sm:w-6/12" %>
+        </div>
+        <div class="space-y-4">
+          <%= form.label :email, "メールアドレス", class: "form_label" %>
+          <%= form.text_field :email, placeholder: "メールアドレス", class: "text_field w-full sm:w-6/12" %>
+        </div>
+        <div class="space-y-4">
+          <%= form.label :telephone, "電話番号", class: "form_label" %>
+          <%= form.text_field :telephone, placeholder: "電話番号", class: "text_field w-full sm:w-6/12" %>
+        </div>
+        <div>
+          <label class="form_label">サービスを知ったきっかけ</label>
+          <span class="sub_text">（複数選択可）</span>
+        </div>
+
+        <div>
+          <label class="form_label">保有スキル</label>
+          <span class="sub_text">（複数選択可）</span>
+          <% BigCategory.all.each do |big_category| %>
+            <div class="space-y-4">
+              <label class="base_text"><%= big_category.name %></label>
+              <%= form.collection_check_boxes :category_ids, big_category.categories, :id, :name %>
+            </div>
+          <% end %>
+        </div>
+        <div class="space-y-4">
+          <%= form.label :other, "得意なこと", class: "form_label" %>
+          <%= form.text_area :other, rows: 5, placeholder: "（例1）Instagramで美容院・クリニックの集客支援をするのが得意です。\n（例2）ホームページ作成が得意です。20社以上のHPを主にWordpressでつくってきました。", class: "text_field w-full sm:w-6/12" %>
+        </div>
+        <div class="space-y-4">
+          <%= form.label :privacy, "プライバシーポリシーに同意する",  class: "form_label" %>
+          <%= form.check_box :privacy, class: "text_field" %>
+          <p class="sub_text"><%= link_to "プライバシーポリシーはコチラ", privacy_path %></p>
+        </div>
+
+        <%= form.submit "送信する", class: "button_gradation bg_gradation" %>
+
+      <% end %>
+
+
+    </div>
+  </div>
+</div>

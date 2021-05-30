@@ -1,0 +1,6 @@
+.text_field {
+  @apply text-sm sm:text-base text-subtext border focus:outline-none focus:ring py-2 sm:py-2.5 px-2 sm:px-2.5 rounded-md placeholder-blank;
+}
+.form_label {
+  @apply sm:text-xl font-bold block;
+}
