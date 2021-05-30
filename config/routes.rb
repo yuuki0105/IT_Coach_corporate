@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   namespace :itcoach do
     resource :recruitment,only: [:show]
-    resource :entry,only: [:show]
+    resource :entry,only: [:show, :create]
   end
 
   resource :privacy,only: [:show]
