@@ -1,5 +1,21 @@
 <% content_for :javascripts do %>
+  <%= javascript_pack_tag "utilities/text" %>
   <%= javascript_pack_tag "utilities/button" %>
+  <%= javascript_pack_tag "utilities/form" %>
 <% end %>
+
+<div class="space-y-4 sm:space-y-6 bg-backgroundGray pt-4 sm:pt-6 pb-20 sm:pb-30">
+  <div class="py-12 sm:py-20 bg-white px-5 sm:px-30">
+    <div>
+      <h1 class="h1_text text-center">ITコーチエントリー</h1>
+      <p class="base_text mt-6">ご興味をもっていただきありがとうございます。<br class="sm:hidden">以下のフォームよりご入力ください。</p>
+      <div class="space-y-2 mt-4">
+        <p class="sub_text">※すべて必須記入項目となります。</p>
+        <p class="sub_text">※書面審査結果は、エントリーフォームへの入力後1週間以内に登録メールアドレスへお送りします。</p>
+        <p class="sub_text">※不合格の場合も審査連絡から90日後に再審査が可能です。</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 <button class="button_gradation bg_gradation">送信する</button>
