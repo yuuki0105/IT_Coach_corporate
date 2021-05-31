@@ -7,10 +7,10 @@ class CreateContacts < ActiveRecord::Migration[6.1]
       t.string :email, null: false
       t.string :telephone, null: false
       t.text :will, null: false
-      t.integer :bughet, null: false
-      t.integer :tech_ability, null: false
-      t.integer :business_manner, null: false
-      t.integer :communication_ability, null: false
+      t.integer :budget_id, null: false
+      t.integer :tech_ability_id, null: false
+      t.integer :business_manner_id, null: false
+      t.integer :communication_ability_id, null: false
       t.text :other, null: false
       t.boolean :privacy, null: false, default: false
 

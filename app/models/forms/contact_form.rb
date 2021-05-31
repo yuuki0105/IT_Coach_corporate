@@ -3,7 +3,7 @@ class Forms::ContactForm
   attr_accessor :category_ids, :action, :current_account
 
 
-  attr_accessor :name, :company, :roll, :email, :telephone, :will, :bughet, :tech_ability, :business_manner, :communication_ability, :other, :privacy, :category_ids
+  attr_accessor :name, :company, :roll, :email, :telephone, :will, :budget, :tech_ability, :business_manner, :communication_ability, :other, :privacy, :category_ids
 
   def set_attributes(attributes)
     self.name = attributes[:name]
@@ -12,7 +12,7 @@ class Forms::ContactForm
     self.email = attributes[:email]
     self.telephone = attributes[:telephone]
     self.will = attributes[:will]
-    self.bughet = attributes[:bughet]
+    self.budget = attributes[:budget]
     self.tech_ability = attributes[:tech_ability]
     self.business_manner = attributes[:business_manner]
     self.communication_ability = attributes[:communication_ability]

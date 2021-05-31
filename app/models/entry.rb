@@ -17,6 +17,16 @@ class Entry < ApplicationRecord
   has_many :portfolios
   has_many :careers
 
+  has_many :entry_categories
+  has_many :categories, through: :entry_categories
+
+  has_many :entry_source_routes
+  has_many :source_routes, through: :entry_source_routes
+
+  accepts_nested_attributes_for :careers, allow_destroy: true, reject_if: :all_blank
+  accepts_nested_attributes_for :portfolios, allow_destroy: true, reject_if: :all_blank
+  accepts_nested_attributes_for :categories, allow_destroy: true, reject_if: :all_blank
+
   # Validations
 
   # Callbacks
