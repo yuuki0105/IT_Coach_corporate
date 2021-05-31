@@ -8,10 +8,10 @@
 
 
 big_categories = [
-  {big_category: "SNSマーケ", categories: ["FB", "Twitter"]},
-  {big_category: "EC・ネットショップ", categories: ["shopify"]},
-  {big_category: "Webマーケ", categories: ["seo"]},
-  {big_category: "Web制作", categories: ["wp", "nocode"]}
+  {big_category: "SNSマーケティング", categories: ["Facebook", "Twitter", "Instagram", "LINE", "Youtube", "その他"]},
+  {big_category: "EC・ネットショップ", categories: ["Amazon", "楽天", "Yahooショッピング", "Shopify"]},
+  {big_category: "Webマーケティング", categories: ["SEO", "リスティング"]},
+  {big_category: "Web制作・開発", categories: ["Wordpress", "nocode"]}
 ]
 
 big_categories.each do |big_category|
