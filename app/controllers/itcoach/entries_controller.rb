@@ -1,7 +1,8 @@
 class Itcoach::EntriesController < ApplicationController
 
   def show
-    @form = Forms::ContactForm.new
+    @form = Entry.new
+    @form.careers.build if @form.careers.blank?
   end
 
   def create
