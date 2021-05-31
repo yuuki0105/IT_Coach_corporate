@@ -62,33 +62,64 @@
 
       <div class="space-y-4">
         <%= form.label :will, "ITコーチを活用し実現したいこと", class: "form_label" %>
-        <%= form.text_area :will, placeholder: "実現したいこと", class: "text_field w-full sm:w-6/12" %>
+        <%= form.text_area :will, placeholder: "実現したいこと", rows: 4, class: "text_field w-full sm:w-6/12" %>
       </div>
+
       <div class="space-y-4">
         <%= form.label :budget, "予算", class: "form_label" %>
-        <span class="sub_text">（SNS・EC・Webの制作・開発・広告に関する月額予算目安）</span>
-        <%= form.number_field :budget, class: "number_field" %>
+        <span class="sub_text">（SNS・EC・Webの制作・開発・広告などの月額予算目安）</span>
+        <%= form.select :bughet, Budget.all.pluck(:range, :id), {}, class: "block text_field w-full sm:w-6/12" %>
       </div>
-      <div class="space-y-4">
+
+      <div class="space-y-4 w-full sm:w-6/12">
         <label class="form_label">ITコーチに求める能力</label>
-        <%= form.label :tech_ability, class: "form_label" %>
-        <%= form.number_field :tech_ability, class: "text_field" %>
-        <%= form.label :business_manner, class: "form_label" %>
-        <%= form.number_field :business_manner, class: "text_field" %>
-        <%= form.label :communication_ability, class: "form_label" %>
-        <%= form.number_field :communication_ability, class: "text_field" %>
+        <div class="grid grid-cols-5 text-center">
+          <label class="col-span-2"></label>
+          <% AbilityLevel.all.each do |level| %>
+            <label class="sub_text"><%= level.name %></label>
+          <% end %>
+        </div>
+        <div class="items-center grid grid-cols-5">
+          <%= form.label :tech_ability, "技術力", class: "base_text col-span-2" %>
+          <% AbilityLevel.all.each do |level| %>
+            <div class="text-center">
+              <%= form.radio_button :tech_ability, level.id, class: "w-6 h-6" %>
+            </div>
+          <% end %>
+        </div>
+        <div class="items-center grid grid-cols-5">
+          <%= form.label :business_manner, "ビジネスマナー", class: "base_text  col-span-2" %>
+          <% AbilityLevel.all.each do |level| %>
+            <div class="text-center">
+              <%= form.radio_button :business_manner, level.id, class: "w-6 h-6" %>
+            </div>
+          <% end %>
+        </div>
+        <div class="items-center grid grid-cols-5">
+          <%= form.label :communication_ability, "コミュニケーション能力", class: "base_text col-span-2" %>
+          <% AbilityLevel.all.each do |level| %>
+            <div class="text-center">
+              <%= form.radio_button :communication_ability, level.id, class: "w-6 h-6" %>
+            </div>
+          <% end %>
+        </div>
       </div>
+
       <div class="space-y-4">
         <%= form.label :other, "その他", class: "form_label" %>
-        <%= form.text_area :other, placeholder: "その他問い合わせ事項がありましたらご記入ください。", class: "text_field w-full sm:w-6/12" %>
+        <%= form.text_area :other, placeholder: "その他問い合わせ事項がありましたらご記入ください。", rows: 4, class: "text_field w-full sm:w-6/12" %>
       </div>
+
       <div class="space-y-4">
-        <%= form.label :privacy, "プライバシーポリシーに同意する",  class: "form_label" %>
-        <%= form.check_box :privacy, class: "text_field" %>
-        <p class="sub_text"><%= link_to "プライバシーポリシーはコチラ", privacy_path %></p>
+      <div class="flex items-center space-x-4">
+        <%= form.check_box :privacy, class: "text_field inline-block w-6 h-6" %>
+        <%= form.label :privacy, "プライバシーポリシーに同意する", class: "base_text" %>
+      </div>
+        <p class="sub_text underline cursor-pointerr"><%= link_to "プライバシーポリシーはこちら", privacy_path %></p>
       </div>
 
       <%= form.submit "送信する", class: "button_gradation bg_gradation" %>
+
     <% end %>
 
   </div>
