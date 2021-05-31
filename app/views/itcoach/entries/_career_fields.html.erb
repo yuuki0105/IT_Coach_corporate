@@ -1,0 +1,25 @@
+<div class="nested-fields my-4 sm:my-8 pb-4 sm:pb-8 border-borderGray border-b">
+  <div class="flex justify-between">
+    <label class="base_text">職歴</label>
+    <%= link_to_remove_association "✕", f, class: "block ml-2 text-primary text-base sm:text-xl font-bold" %>
+  </div>
+  <div class="mt-4 space-y-2 sm:space-y-4">
+    <div>
+      <%= f.text_field :organization, maxlength: 20, class: "text_field w-full", placeholder: "所属" %>
+    </div>
+    <div>
+      <%= f.text_field :role, maxlength: 40, class: "text_field w-full", placeholder: "役割" %>
+    </div>
+    <div class="flex justify-between placeholder-blank sm:items-center w-full">
+      <div class="space-x-4">
+        <%= f.date_select :start_month ,{discard_day: true, start_year: 2000,  end_year: Time.zone.today.year, use_month_numbers: true, date_separator: "年", prompt: "--"}, {class: "sm:py-1 sm:px-2 border border-borderGray rounded-md bg-white"}  %>月
+      </div>
+      <span>〜</span>
+      <div class="sm:flex sm:items-center sm:space-x-4 space-y-1 sm:space-y-0">
+        <div class="space-x-4">
+          <%= f.date_select :end_month ,{discard_day: true, start_year: 2000, end_year: Time.zone.today.year, use_month_numbers: true, date_separator: "年", prompt: "--"}, {id: "end_month_#{f.index}", class: "end_month_#{f.index} sm:py-1 sm:px-2 border border-borderGray rounded-md bg-white"} %>月
+        </div>
+      </div>
+    </div>
+  </div>
+

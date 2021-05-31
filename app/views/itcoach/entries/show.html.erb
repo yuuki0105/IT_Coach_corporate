@@ -37,21 +37,44 @@
         <div>
           <label class="form_label">保有スキル</label>
           <span class="sub_text">（複数選択可）</span>
-          <% BigCategory.all.each do |big_category| %>
-            <div class="space-y-4">
-              <label class="base_text"><%= big_category.name %></label>
-              <%= form.collection_check_boxes :category_ids, big_category.categories, :id, :name %>
+            <div class="space-y-8 mt-4">
+              <% BigCategory.all.each do |big_category| %>
+                <div>
+                  <label class="base_text block font-bold"><%= big_category.name %></label>
+                  <div class="space-y-4 grid grid-cols-2 sm:grid-cols-4">
+                    <%= form.collection_check_boxes :categories, big_category.categories, :id, :name do |b| %>
+                      <%= b.label class:"flex items-center space-x-2" do %>
+                        <%= b.check_box class: "h-5 w-5" %>
+                        <span class="block base_text"><%= b.text %></span>
+                      <% end %>
+                    <% end %>
+                  </div>
+                </div>
+              <% end %>
             </div>
-          <% end %>
         </div>
+
+        <div id="career" class="sm:w-6/12">
+          <label class="form_label">キャリア</label>
+          <%= form.fields_for :careers do |career| %>
+            <%= render "itcoach/entries/career_fields", f: career %>
+          <% end %>
+          <div>
+            <%= link_to_add_association '＋追加する', form, :careers, data: { association_insertion_method: 'before' }, class: "button_add_form" %>
+          </div>
+        </div>
+
         <div class="space-y-4">
           <%= form.label :other, "得意なこと", class: "form_label" %>
           <%= form.text_area :other, rows: 5, placeholder: "（例1）Instagramで美容院・クリニックの集客支援をするのが得意です。\n（例2）ホームページ作成が得意です。20社以上のHPを主にWordpressでつくってきました。", class: "text_field w-full sm:w-6/12" %>
         </div>
+
         <div class="space-y-4">
-          <%= form.label :privacy, "プライバシーポリシーに同意する",  class: "form_label" %>
-          <%= form.check_box :privacy, class: "text_field" %>
-          <p class="sub_text"><%= link_to "プライバシーポリシーはコチラ", privacy_path %></p>
+          <div class="flex items-center space-x-4">
+            <%= form.check_box :privacy, class: "text_field inline-block w-6 h-6" %>
+            <%= form.label :privacy, "プライバシーポリシーに同意する", class: "base_text" %>
+          </div>
+          <p class="sub_text underline cursor-pointerr"><%= link_to "プライバシーポリシーはこちら", privacy_path %></p>
         </div>
 
         <%= form.submit "送信する", class: "button_gradation bg_gradation" %>
