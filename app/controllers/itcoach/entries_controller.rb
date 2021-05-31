@@ -5,17 +5,15 @@ class Itcoach::EntriesController < ApplicationController
   end
 
   def create
-    @form = Forms::ContactForm.new
-    @form.set_attributes(contact_parmas)
+    @form = Entry.new
+    @form.attributes = entry_params
     @form.save
-
     redirect_to root_path
   end
 
   private
-
-  def contact_parmas
-    params.require(:forms_contact_form).permit(:name, skill_ids: [])
+  def entry_params
+    params.require(:entry).permit(:name, careers_attributes: [])
   end
 
 end
