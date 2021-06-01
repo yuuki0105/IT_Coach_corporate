@@ -7,15 +7,18 @@ class Itcoach::EntriesController < ApplicationController
   end
 
   def create
-    @form = Entry.new
-    @form.attributes = entry_params
-    @form.save
-    redirect_to root_path
+    @form = Entry.new(entry_params)
+    if @form.valid?
+      @form.save
+      redirect_to root_path
+    else
+      render :show
+    end
   end
 
   private
   def entry_params
-    params.require(:entry).permit(:name, careers_attributes: [])
+    params.require(:entry).permit(:name, :email, :telephone, :specialty, :privacy, :other, category_ids: [], source_route_ids: [], careers_attributes: [:id, :event_id, :organization, :role, :start_month, :end_month, :_destroy], portfolios_attributes: [:id, :event_id, :title, :url, :_destroy])
   end
 
 end
