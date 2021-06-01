@@ -1,0 +1,9 @@
+- id: 1
+  name: すごく重視
+  type: HIGHEST
+- id: 2
+  name: やや重視
+  type: HIGHER
+- id: 3
+  name: 重視しない
+  type: LOW

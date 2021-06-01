@@ -6,12 +6,17 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+source_routes = ["Facebookをみて", "Twitterをみて", "noteをみて", "検索してみて", "口コミ・紹介", "その他"]
+source_routes.each do |source_route|
+  SourceRoute.find_or_create_by(title: source_route)
+end
+
 
 big_categories = [
-  {big_category: "SNSマーケ", categories: ["FB", "Twitter"]},
-  {big_category: "EC・ネットショップ", categories: ["shopify"]},
-  {big_category: "Webマーケ", categories: ["seo"]},
-  {big_category: "Web制作", categories: ["wp", "nocode"]}
+  {big_category: "SNSマーケティング", categories: ["Facebook", "Twitter", "Instagram", "LINE", "Youtube", "その他"]},
+  {big_category: "EC・ネットショップ", categories: ["Amazon", "楽天", "Yahooショッピング", "Shopify"]},
+  {big_category: "Webマーケティング", categories: ["SEO", "リスティング"]},
+  {big_category: "Web制作・開発", categories: ["Wordpress", "nocode"]}
 ]
 
 big_categories.each do |big_category|
