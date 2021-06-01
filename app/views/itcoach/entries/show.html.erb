@@ -60,7 +60,17 @@
             <%= render "itcoach/entries/career_fields", f: career %>
           <% end %>
           <div>
-            <%= link_to_add_association '＋追加する', form, :careers, data: { association_insertion_method: 'before' }, class: "button_add_form" %>
+            <%= link_to_add_association '＋キャリアを追加する', form, :careers, data: { association_insertion_method: 'before' }, class: "button_add_form" %>
+          </div>
+        </div>
+
+        <div id="portfolio" class="sm:w-6/12">
+          <label class="form_label">ポートフォリオ</label>
+          <%= form.fields_for :portfolios do |portfolio| %>
+            <%= render "itcoach/entries/portfolio_fields", f: portfolio %>
+          <% end %>
+          <div>
+            <%= link_to_add_association '＋ポートフォリオを追加する', form, :portfolios, data: { association_insertion_method: 'before' }, class: "button_add_form" %>
           </div>
         </div>
 

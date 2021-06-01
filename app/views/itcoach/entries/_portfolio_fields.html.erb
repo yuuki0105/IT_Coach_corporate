@@ -1,0 +1,15 @@
+<div class="nested-fields mt-4 sm:mt-8 mb-2 sm:mb-4">
+  <div class="flex justify-between">
+    <label class="base_text">実績・作品</label>
+    <%= link_to_remove_association "✕", f, class: "block ml-2 text-primary text-base sm:text-xl font-bold" %>
+  </div>
+  <div class="mt-4 space-y-2 sm:space-y-4">
+    <div>
+      <%= f.text_field :title, maxlength: 80, class: "text_field w-full", placeholder: "タイトル" %>
+    </div>
+    <div>
+      <%= f.text_field :url, maxlength: 255, class: "text_field w-full", placeholder: "URL（任意）" %>
+    </div>
+  </div>
+</div>
+

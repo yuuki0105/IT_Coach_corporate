@@ -3,6 +3,7 @@ class Itcoach::EntriesController < ApplicationController
   def show
     @form = Entry.new
     @form.careers.build if @form.careers.blank?
+    @form.portfolios.build if @form.portfolios.blank?
   end
 
   def create
