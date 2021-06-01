@@ -3,7 +3,7 @@ class CreateContacts < ActiveRecord::Migration[6.1]
     create_table :contacts do |t|
       t.string :name, null: false
       t.string :company, null: false
-      t.string :roll, null: false
+      t.string :role, null: false
       t.string :email, null: false
       t.string :telephone, null: false
       t.text :will, null: false
