@@ -8,6 +8,7 @@
 #  telephone  :string(255)      not null
 #  specialty  :text(65535)      not null
 #  privacy    :boolean          default(FALSE), not null
+#  other      :text(65535)      not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #

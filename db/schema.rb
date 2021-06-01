@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 2021_05_31_040524) do
   create_table "contacts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.string "company", null: false
-    t.string "roll", null: false
+    t.string "role", null: false
     t.string "email", null: false
     t.string "telephone", null: false
     t.text "will", null: false
@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(version: 2021_05_31_040524) do
     t.string "telephone", null: false
     t.text "specialty", null: false
     t.boolean "privacy", default: false, null: false
+    t.text "other", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

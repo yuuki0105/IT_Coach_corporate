@@ -38,6 +38,14 @@
       <div>
         <label class="form_label">サービスを知ったきっかけ</label>
         <span class="sub_text">（複数選択可）</span>
+        <div class="space-y-4 grid grid-cols-2 sm:grid-cols-4">
+          <%= form.collection_check_boxes :source_route_ids, SourceRoute.all, :id, :title do |b| %>
+            <%= b.label class:"flex items-center space-x-2" do %>
+              <%= b.check_box class: "h-5 w-5" %>
+              <span class="block base_text"><%= b.text %></span>
+            <% end %>
+          <% end %>
+        </div>
       </div>
 
       <div>

@@ -29,10 +29,19 @@
           <%= form.label :telephone, "電話番号", class: "form_label" %>
           <%= form.text_field :telephone, placeholder: "電話番号", class: "text_field w-full sm:w-6/12" %>
         </div>
-        <div>
-          <label class="form_label">サービスを知ったきっかけ</label>
-          <span class="sub_text">（複数選択可）</span>
+
+      <div>
+        <label class="form_label">サービスを知ったきっかけ</label>
+        <span class="sub_text">（複数選択可）</span>
+        <div class="space-y-4 grid grid-cols-2 sm:grid-cols-4">
+          <%= form.collection_check_boxes :source_route_ids, SourceRoute.all, :id, :title do |b| %>
+            <%= b.label class:"flex items-center space-x-2" do %>
+              <%= b.check_box class: "h-5 w-5" %>
+              <span class="block base_text"><%= b.text %></span>
+            <% end %>
+          <% end %>
         </div>
+      </div>
 
         <div>
           <label class="form_label">保有スキル</label>
@@ -78,6 +87,11 @@
           <%= form.label :other, "得意なこと", class: "form_label" %>
           <%= form.text_area :other, rows: 5, placeholder: "（例1）Instagramで美容院・クリニックの集客支援をするのが得意です。\n（例2）ホームページ作成が得意です。20社以上のHPを主にWordpressでつくってきました。", class: "text_field w-full sm:w-6/12" %>
         </div>
+
+      <div class="space-y-4">
+        <%= form.label :other, "その他", class: "form_label" %>
+        <%= form.text_area :other, placeholder: "その他問い合わせ事項がありましたらご記入ください。", rows: 4, class: "text_field w-full sm:w-6/12" %>
+      </div>
 
         <div class="space-y-4">
           <div class="flex items-center space-x-4">

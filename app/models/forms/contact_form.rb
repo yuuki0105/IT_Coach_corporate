@@ -1,9 +1,7 @@
 class Forms::ContactForm
   include ActiveModel::Model
-  attr_accessor :category_ids, :action, :current_account
 
-
-  attr_accessor :name, :company, :roll, :email, :telephone, :will, :budget, :tech_ability, :business_manner, :communication_ability, :other, :privacy, :category_ids
+  attr_accessor :name, :company, :roll, :email, :telephone, :will, :budget, :tech_ability, :business_manner, :communication_ability, :other, :privacy, :category_ids, :source_route_ids
 
   def set_attributes(attributes)
     self.name = attributes[:name]

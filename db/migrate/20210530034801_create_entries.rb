@@ -6,6 +6,7 @@ class CreateEntries < ActiveRecord::Migration[6.1]
       t.string :telephone, null: false
       t.text :specialty, null: false
       t.boolean :privacy, null: false, default: false
+      t.text :other, null: false
 
       t.timestamps
     end
