@@ -6,11 +6,12 @@ Rails.application.routes.draw do
   resource :top,only: [:show]
 
   resource :contact,only: [:show, :create]
-
+  resource :contact_complete,only: [:show]
 
   namespace :itcoach do
     resource :recruitment,only: [:show]
     resource :entry,only: [:show, :create]
+    resource :complete,only: [:show]
   end
 
   resource :privacy,only: [:show]

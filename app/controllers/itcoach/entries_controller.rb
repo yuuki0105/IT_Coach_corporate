@@ -10,7 +10,7 @@ class Itcoach::EntriesController < ApplicationController
     @form = Entry.new(entry_params)
     if @form.valid?
       @form.save
-      redirect_to root_path
+      redirect_to itcoach_complete_path
     else
       render :show
     end
