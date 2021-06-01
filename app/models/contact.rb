@@ -5,7 +5,7 @@
 #  id                       :bigint           not null, primary key
 #  name                     :string(255)      not null
 #  company                  :string(255)      not null
-#  roll                     :string(255)      not null
+#  role                     :string(255)      not null
 #  email                    :string(255)      not null
 #  telephone                :string(255)      not null
 #  will                     :text(65535)      not null
