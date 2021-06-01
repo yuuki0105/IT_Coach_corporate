@@ -22,7 +22,7 @@ class EntrySourceRoute < ApplicationRecord
 
   # Relations
   belongs_to :entry
-  belongs_to :source_routes
+  belongs_to :source_route
 
   # Validations
 

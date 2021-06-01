@@ -23,7 +23,7 @@
 class Career < ApplicationRecord
 
   # Relations
-  belongs_to :Entry
+  belongs_to :entry
 
   # Validations
 
