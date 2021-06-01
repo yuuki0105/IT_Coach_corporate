@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 2021_05_31_040524) do
     t.integer "tech_ability_id", null: false
     t.integer "business_manner_id", null: false
     t.integer "communication_ability_id", null: false
-    t.text "other", null: false
+    t.text "other"
     t.boolean "privacy", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(version: 2021_05_31_040524) do
     t.string "telephone", null: false
     t.text "specialty", null: false
     t.boolean "privacy", default: false, null: false
-    t.text "other", null: false
+    t.text "other"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -11,7 +11,7 @@ class CreateContacts < ActiveRecord::Migration[6.1]
       t.integer :tech_ability_id, null: false
       t.integer :business_manner_id, null: false
       t.integer :communication_ability_id, null: false
-      t.text :other, null: false
+      t.text :other
       t.boolean :privacy, null: false, default: false
 
       t.timestamps
