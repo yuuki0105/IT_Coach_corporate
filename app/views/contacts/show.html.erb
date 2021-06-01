@@ -76,7 +76,7 @@
       <div class="space-y-4">
         <%= form.label :budget, "予算", class: "form_label" %>
         <span class="sub_text">（SNS・EC・Webの制作・開発・広告などの月額予算目安）</span>
-        <%= form.select :bughet, Budget.all.pluck(:range, :id), {}, class: "block text_field w-full sm:w-6/12" %>
+        <%= form.select :bughet, Budget.all.pluck(:range, :id), {}, class: "block text_field w-full sm:w-6/12 bg-white" %>
       </div>
 
       <div class="space-y-4 w-full sm:w-6/12">

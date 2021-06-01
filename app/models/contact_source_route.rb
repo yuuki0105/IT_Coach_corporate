@@ -21,6 +21,8 @@
 class ContactSourceRoute < ApplicationRecord
 
   # Relations
+  belongs_to :contact
+  belongs_to :source_route
 
   # Validations
 

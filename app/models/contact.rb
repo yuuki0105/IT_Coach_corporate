@@ -13,7 +13,7 @@
 #  tech_ability_id          :integer          not null
 #  business_manner_id       :integer          not null
 #  communication_ability_id :integer          not null
-#  other                    :text(65535)      not null
+#  other                    :text(65535)
 #  privacy                  :boolean          default(FALSE), not null
 #  created_at               :datetime         not null
 #  updated_at               :datetime         not null
@@ -27,6 +27,8 @@ class Contact < ApplicationRecord
 
   has_many :categories, through: :contact_categories
   has_many :contact_categories
+  has_many :source_routes, through: :contact_source_routes
+  has_many :contact_source_routes
 
   # Relations
 

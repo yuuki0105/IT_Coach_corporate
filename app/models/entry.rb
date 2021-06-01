@@ -8,7 +8,7 @@
 #  telephone  :string(255)      not null
 #  specialty  :text(65535)      not null
 #  privacy    :boolean          default(FALSE), not null
-#  other      :text(65535)      not null
+#  other      :text(65535)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
@@ -26,7 +26,6 @@ class Entry < ApplicationRecord
 
   accepts_nested_attributes_for :careers, allow_destroy: true, reject_if: :all_blank
   accepts_nested_attributes_for :portfolios, allow_destroy: true, reject_if: :all_blank
-  accepts_nested_attributes_for :categories, allow_destroy: true, reject_if: :all_blank
 
   # Validations
 

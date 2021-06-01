@@ -10,19 +10,19 @@ class Forms::ContactForm
     self.email = attributes[:email]
     self.telephone = attributes[:telephone]
     self.will = attributes[:will]
-    self.budget = attributes[:budget]
-    self.tech_ability = attributes[:tech_ability]
-    self.business_manner = attributes[:business_manner]
-    self.communication_ability = attributes[:communication_ability]
+    self.budget = attributes[:budget].to_i
+    self.tech_ability = attributes[:tech_ability].to_i
+    self.business_manner = attributes[:business_manner].to_i
+    self.communication_ability = attributes[:communication_ability].to_i
     self.other = attributes[:other]
     self.privacy = ActiveModel::Type::Boolean.new.cast(attributes[:privacy])
-    self.category_ids = attributes[:category_ids].reject(&:blank?)
-    self.source_route_ids = attributes[:source_route_ids].reject(&:blank?)
+    self.category_ids = attributes[:category_ids].reject(&:blank?).map(&:to_i)
+    self.source_route_ids = attributes[:source_route_ids].reject(&:blank?).map(&:to_i)
   end
 
   def save
     ApplicationRecord.transaction do
-      contact = Contact.create(name: name, company: company, role: role, email: email: telephone: telephone, will: will, budget: budget, tech_ability: tech_ability, business_manner: business_manner, communication_ability: communication_ability, other: other, privacy: privacy)
+      contact = Contact.create(name: name, company: company, role: role, email: email, telephone: telephone, will: will, budget_id: budget, tech_ability_id: tech_ability, business_manner_id: business_manner, communication_ability_id: communication_ability, other: other, privacy: privacy)
       categories.each do |category|
         contact.contact_categories.create(category: category)
       end
@@ -37,7 +37,7 @@ class Forms::ContactForm
     Category.where(id: category_ids)
   end
   def source_routes
-    SourceRoutes.where(id: source_route_ids)
+    SourceRoute.where(id: source_route_ids)
   end
 
 end

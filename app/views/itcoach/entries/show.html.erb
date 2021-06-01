@@ -15,7 +15,7 @@
         <p class="sub_text">※不合格の場合も審査連絡から90日後に再審査が可能です。</p>
       </div>
 
-      <%= form_with model: @form, url: contact_path, local: true, method: :post, class: "space-y-8" do |form| %>
+      <%= form_with model: @form, url: itcoach_entry_path, local: true, method: :post, class: "space-y-8" do |form| %>
 
         <div class="space-y-4">
           <%= form.label :name, "名前", class: "form_label" %>
@@ -51,7 +51,7 @@
                 <div>
                   <label class="base_text block font-bold"><%= big_category.name %></label>
                   <div class="space-y-4 grid grid-cols-2 sm:grid-cols-4">
-                    <%= form.collection_check_boxes :categories, big_category.categories, :id, :name do |b| %>
+                    <%= form.collection_check_boxes :category_ids, big_category.categories, :id, :name do |b| %>
                       <%= b.label class:"flex items-center space-x-2" do %>
                         <%= b.check_box class: "h-5 w-5" %>
                         <span class="block base_text"><%= b.text %></span>
@@ -84,8 +84,8 @@
         </div>
 
         <div class="space-y-4">
-          <%= form.label :other, "得意なこと", class: "form_label" %>
-          <%= form.text_area :other, rows: 5, placeholder: "（例1）Instagramで美容院・クリニックの集客支援をするのが得意です。\n（例2）ホームページ作成が得意です。20社以上のHPを主にWordpressでつくってきました。", class: "text_field w-full sm:w-6/12" %>
+          <%= form.label :specialty, "得意なこと", class: "form_label" %>
+          <%= form.text_area :specialty, rows: 5, placeholder: "（例1）Instagramで美容院・クリニックの集客支援をするのが得意です。\n（例2）ホームページ作成が得意です。20社以上のHPを主にWordpressでつくってきました。", class: "text_field w-full sm:w-6/12" %>
         </div>
 
       <div class="space-y-4">
