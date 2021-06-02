@@ -1,11 +1,47 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>株式会社IT Coach</title>
-    <meta name=”description” content='株式会社IT Coachのコーポレイトサイトです。'>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+    <% if content_for? :title %>
+      <title><%= yield :title %></title>
+    <% else %>
+      <title>株式会社IT Coach</title>
+    <% end %>
+
+    <% if content_for? :meta_description %>
+      <meta name="description" content="<%= yield :meta_description %>">
+    <% else %>
+      <meta name="description" content="株式会社IT Coachのコーポレイトサイトです。">
+    <% end %>
+
+    <meta name="keywords" content="SNSマーケティング,EC・ネットショップ,Webマーケティング,Web制作,ITコーチ,ITコンサル,内製化,インハウス<%= yield :meta_keywords if content_for? :meta_keywords %>" />
+    <meta property="og:site_name" content="IT Coach">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="<%= "#{root_url.chop}#{request.path_info}" %>">
+
+    <% if content_for? :og_title %>
+      <meta property="og:title" content="<%= yield :og_title %>">
+    <% else %>
+      <meta property="og:title" content="株式会社IT Coach">
+    <% end %>
+
+    <% if content_for? :og_description %>
+      <meta property="og:description" content="<%= yield :og_description %>" />
+    <% else %>
+      <meta property="og:description" content="SNS・EC・WebマーケティングにプロのITコーチが伴走" />
+    <% end %>
+
+    <!-- OGP -->
+    <meta property="og:image" content="<%= "#{root_url}/top_ogp.png" %>">
+    <!-- FacebookのOGP -->
+    <meta name="" content="" />
+    <!-- TwitterのOGP -->
+    <meta name="twitter:card" content="summary_large_image" />
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
