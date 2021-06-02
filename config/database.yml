@@ -50,6 +50,7 @@ test:
 #
 production:
   <<: *default
-  database: it_coach_corporate_production
-  username: it_coach_corporate
-  password: <%= ENV['IT_COACH_CORPORATE_DATABASE_PASSWORD'] %>
+  database: <%= ENV['DATABASE_NAME'] %>
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  host: <%= ENV['DATABASE_HOST'] %>
