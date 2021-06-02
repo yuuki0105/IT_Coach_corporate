@@ -52,17 +52,60 @@
       <div class="space-y-6">
         <h3 class="h3_text">対応ジャンル</h3>
         <div class="space-y-6 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-10">
-          <div class="bg_primaryPale_textbox">
+          <div class="bg_primaryPale_textbox py-6 sm:py-8 px-4 sm:px-6">
             <h4 class="h4_text">SNSマーケティング</h4>
+            <p class="base_text mt-4">各種SNSの広告運用やアカウントの企画・運用などの支援</p>
+            <div class="flex justify-around items-center mt-6 sm:mt-8">
+              <%= image_tag 'big_category/sns/facebook_logo.svg', class: "h-6 sm:h-full" %>
+              <%= image_tag 'big_category/sns/instagram_logo.svg', class: "h-6 sm:h-full" %>
+              <%= image_tag 'big_category/sns/twitter_logo.svg', class: "h-6 sm:h-full" %>
+              <%= image_tag 'big_category/sns/line_logo.svg', class: "h-6 sm:h-full" %>
+              <%= image_tag 'big_category/sns/youtube_logo.svg', class: "h-5 sm:h-full" %>
+            </div>
           </div>
-          <div class="bg_primaryPale_textbox">
-            <h4 class="h4_text">EC・ネットショップ</h4>
-          </div>
-          <div class="bg_primaryPale_textbox">
+          <div class="bg_primaryPale_textbox py-6 sm:py-8 px-4 sm:px-6">
             <h4 class="h4_text">Webマーケティング</h4>
+            <p class="base_text mt-4">SEO・MEO・リスティング・リターゲティングなどの企画・分析・運用の支援</p>
+            <div class="flex justify-around items-center mt-6 sm:mt-8">
+              <%= image_tag 'big_category/web_marketing/google_logo.svg', class: "h-6 sm:h-full" %>
+              <%= image_tag 'big_category/web_marketing/google_adwords_logo.svg', class: "h-6 sm:h-full" %>
+              <%= image_tag 'big_category/web_marketing/google_map_logo.svg', class: "h-6 sm:h-full" %>
+              <%= image_tag 'big_category/web_marketing/google_analytics_logo.svg', class: "h-6 sm:h-full" %>
+              <%= image_tag 'big_category/web_marketing/google_mybusiness_logo.svg', class: "h-6 sm:h-full" %>
+              <%= image_tag 'big_category/web_marketing/yahoo_logo.svg', class: "h-5 sm:h-full" %>
+            </div>
           </div>
-          <div class="bg_primaryPale_textbox">
-            <h4 class="h4_text">Web制作・開発</h4>
+          <div class="bg_primaryPale_textbox py-6 sm:py-8 px-4 sm:px-6">
+            <h4 class="h4_text">EC・ネットショップ</h4>
+            <p class="base_text mt-4">EC・ネットショップの企画・構築・運用・マーケティングなどの支援</p>
+            <div class="flex justify-around items-center mt-6 sm:mt-8">
+              <%= image_tag 'big_category/ec/amazon_logo.svg', class: "h-5 sm:h-full" %>
+              <%= image_tag 'big_category/ec/rakuten_logo.svg', class: "h-5 sm:h-full" %>
+              <%= image_tag 'big_category/ec/shopify_logo.svg', class: "h-6 sm:h-full" %>
+            </div>
+            <div class="flex justify-around items-center mt-6 sm:mt-8">
+              <%= image_tag 'big_category/ec/base_logo.svg', class: "h-6 sm:h-full" %>
+              <%= image_tag 'big_category/ec/colorme_logo.svg', class: "h-5 sm:h-full" %>
+              <%= image_tag 'big_category/ec/makeshop_logo.svg', class: "h-5 sm:h-full" %>
+              <%= image_tag 'big_category/ec/stripe_logo.svg', class: "h-5 sm:h-full" %>
+            </div>
+          </div>
+          <div class="bg_primaryPale_textbox py-6 sm:py-8 px-4 sm:px-6">
+            <h4 class="h4_text">Web制作</h4>
+            <p class="base_text mt-4">ロゴ・バナー・HP・LP ・Webサービスなどの制作・開発・運用などの支援</p>
+            <div class="flex justify-around items-center mt-6 sm:mt-8">
+              <%= image_tag 'big_category/web_production/illustrator_logo.svg', class: "h-6 sm:h-full" %>
+              <%= image_tag 'big_category/web_production/photoshop_logo.svg', class: "h-6 sm:h-full" %>
+              <%= image_tag 'big_category/web_production/xd_logo.svg', class: "h-6 sm:h-full" %>
+              <%= image_tag 'big_category/web_production/figma_logo.svg', class: "h-6 sm:h-full" %>
+              <%= image_tag 'big_category/web_production/wordpress_logo.svg', class: "h-6 sm:h-full" %>
+            </div>
+            <div class="flex justify-around items-center mt-6 sm:mt-8">
+              <%= image_tag 'big_category/web_production/wix_logo.svg', class: "h-5 sm:h-full" %>
+              <%= image_tag 'big_category/web_production/studio_logo.svg', class: "h-5 sm:h-full" %>
+              <%= image_tag 'big_category/web_production/html_logo.svg', class: "h-6 sm:h-full" %>
+              <%= image_tag 'big_category/web_production/css_logo.svg', class: "h-6 sm:h-full" %>
+            </div>
           </div>
         </div>
         <p class="sub_text">※上記にないジャンルでも対応できる場合もあります。<br class="sm:hidden"><%= link_to "問い合わせフォーム" ,contact_path, class: "text-black underline cursor-pointer" %>からお願いします。</p>
@@ -226,10 +269,10 @@
       <div class="sm:flex space-y-4 sm:space-y-0">
         <div class="sm:space-y-10">
           <h3 class="h3_text text-center sm:text-left">SNS/EC/Webのスキルを活かして稼げるコーチになりませんか？</h3>
-          <p class="hidden sm:block base_text text-left">「SNS運用・マーケティング」<br>「EC・ネットショップ構築・運用」<br>「Webマーケティング」<br>「Web制作・開発」<br>のいずれかのスキルをお持ちで<br>ビジネスマナー・コミュニケーション力のある方へ</p>
+          <p class="hidden sm:block base_text text-left">「SNS運用・マーケティング」<br>「EC・ネットショップ構築・運用」<br>「Webマーケティング」<br>「Web制作」<br>のいずれかのスキルをお持ちで<br>ビジネスマナー・コミュニケーション力のある方へ</p>
         </div>
         <%= image_tag 'coach_recruitment.png',class: "mx-auto sm:mr-0 sm:w-2/5" %>
-        <p class="sm:hidden base_text">「SNS運用・マーケティング」<br>「EC・ネットショップ構築・運用」<br>「Webマーケティング」<br>「Web制作・開発」<br>のいずれかのスキルをお持ちで<br>ビジネスマナー・コミュニケーション力のある方へ</p>
+        <p class="sm:hidden base_text">「SNS運用・マーケティング」<br>「EC・ネットショップ構築・運用」<br>「Webマーケティング」<br>「Web制作」<br>のいずれかのスキルをお持ちで<br>ビジネスマナー・コミュニケーション力のある方へ</p>
       </div>
       <h4 class="bg_primaryPale_textbox h4_text p-2">副業・業務委託で始められ<br class="sm:hidden">最低時給5000円以上〜の報酬が得られる<br>プロのコーチになりませんか？</h4>
     </div>
