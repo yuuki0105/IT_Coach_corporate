@@ -1,4 +1,4 @@
-●様
+<%= @contact.name %>様
 
 IT Coachへお問い合わせいただき
 誠にありがとうございます。
@@ -9,7 +9,47 @@ IT Coachへお問い合わせいただき
 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 【お問い合わせ内容】
 
-＝問合せ情報のコピー
+名前
+<%= @contact.name %>
+
+会社名
+<%= @contact.company %>
+
+役職
+<%= @contact.role %>
+
+メールアドレス
+<%= @contact.email %>
+
+電話番号
+<%= @contact.telephone %>
+
+サービスを知ったきっかけ （複数選択可）
+<% @contact.source_routes.each do |source_route| %>
+<%= source_route.title %>
+<% end %>
+
+ITコーチに相談したいジャンル （複数選択可）
+<% BigCategory.all.each do |big_category| %>
+  [<%= big_category.name %>]
+  <% @contact.categories.where(big_category_id: big_category.id).each do |category| %>
+    <%= category.name %>
+  <% end %>
+<% end %>
+
+ITコーチを活用し実現したいこと
+<%= @contact.will %>
+
+予算 （SNS・EC・Webの制作・開発・広告などの月額予算目安）
+<%= @contact.budget.range %>
+
+ITコーチに求める能力
+技術力<%= @contact.tech_ability.name %>
+ビジネスマナー<%= @contact.business_manner.name %>
+コミュニケーション能力<%= @contact.communication_ability.name %>
+
+その他
+<%= @contact.other %>
 
 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 

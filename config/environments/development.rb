@@ -73,7 +73,7 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :letter_opener_web
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
-
+  config.action_mailer.preview_path = "#{Rails.root}/spec/mailers/previews"
   #deviseが認証用のURLなどを生成するのに必要になる（らしい）
   config.action_mailer.default_url_options = {  host: 'localhost', port: 3000 }
   #送信方法を指定（この他に:sendmail/:file/:testなどがあります)
@@ -87,7 +87,7 @@ Rails.application.configure do
     #gmailのユーザアカウント（xxxx@gmail.com)※念のため、credentials.yml.enc行き
     user_name: Rails.application.credentials.gmail[:user_name],
     #gmail２段階認証回避のためにアプリケーションでの利用パスワードを取得、必ずcredentials.yml.endに設定を！！
-    password: Rails.application.credentials.gmail[:password],,
+    password: Rails.application.credentials.gmail[:password],
     #パスワードをBase64でエンコード
     authentication: :login
   }
