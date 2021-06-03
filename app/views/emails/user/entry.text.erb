@@ -1,0 +1,59 @@
+<%= @entry.name %>様
+
+IT Coachへエントリーいただき
+誠にありがとうございます。
+
+書面審査結果につきまして、
+1週間以内に登録メールアドレスへお送りします。
+
+合格の場合、
+次のプロセスの面談審査へ進んでいただけます。
+
+不合格の場合、
+審査連絡から90日後に再審査が可能です。
+
+ITコーチ募集の詳細につきましては、
+以下のページをご確認ください。
+
+https://itcoach.co.jp/itcoach/recruitment/
+
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+【エントリー内容】
+
+名前
+<%= @entry.name %>
+
+メールアドレス
+<%= @entry.email %>
+
+電話番号
+<%= @entry.telephone %>
+
+サービスを知ったきっかけ （複数選択可）
+<% @entry.source_routes.each do |source_route| %>
+<%= source_route.title %>
+<% end %>
+
+保有スキル （複数選択可）
+<% BigCategory.all.each do |big_category| %>
+  [<%= big_category.name %>]
+  <% @entry.categories.where(big_category_id: big_category.id).each do |category| %>
+    <%= category.name %>
+  <% end %>
+<% end %>
+
+得意なこと
+<%= @entry.specialty %>
+
+その他
+<%= @entry.other %>
+
+
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+株式会社IT Coach
+カスタマーサポート
+cs@itcoach.co.jp
+
+サービスURL
+https://itcoach.co.jp/

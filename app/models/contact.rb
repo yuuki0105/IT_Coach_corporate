@@ -25,10 +25,11 @@ class Contact < ApplicationRecord
   belongs_to :business_manner
   belongs_to :communication_ability
 
-  has_many :categories, through: :contact_categories
   has_many :contact_categories
-  has_many :source_routes, through: :contact_source_routes
+  has_many :categories, through: :contact_categories
+
   has_many :contact_source_routes
+  has_many :source_routes, through: :contact_source_routes
 
   # Relations
 

@@ -1,7 +1,8 @@
 module Emails::User::Contact
   extend ActiveSupport::Concern
 
-  def contact(email)
-    mail(to: email, subject: "hoge")
+  def contact(contact)
+    @contact = contact
+    mail(to: @contact.email, subject: "【IT Coach】お問い合わせありがとうございます。")
   end
 end
