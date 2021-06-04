@@ -3,6 +3,6 @@ module Emails::Admin::Contact
 
   def contact(contact)
     @contact = contact
-    mail(to: @contact.email, subject: "【IT Coach】お問い合わせ")
+    mail(to: "komatsu@itcoach.co.jp", subject: "【IT Coach】お問い合わせ")
   end
 end

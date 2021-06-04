@@ -3,7 +3,7 @@ module Emails::Admin::Entry
 
   def entry(entry)
     @entry = entry
-    mail(to: @entry.email, subject: "【IT Coach】エントリー")
+    mail(to: "komatsu@itcoach.co.jp", subject: "【IT Coach】エントリー")
   end
 
 end

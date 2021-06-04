@@ -8,7 +8,10 @@ class ContactsController < ApplicationController
     @form = Forms::ContactForm.new
     @form.set_attributes(contact_parmas)
     @form.save
-
+    #last変える
+    @contact = Contact.last
+    Emails::User.contact(@contact).deliver_now
+    Emails::Admin.contact(@contact).deliver_now
     redirect_to contact_complete_path
   end
 
