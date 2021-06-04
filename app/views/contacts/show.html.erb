@@ -16,7 +16,7 @@
 
       <div class="space-y-4">
         <%= form.label :name, "名前", class: "form_label" %>
-        <%= form.text_field :name, placeholder: "名前", class: "text_field w-full sm:w-6/12" %>
+        <%= form.text_field :name, placeholder: "名前", class: "text_field w-full sm:w-6/12", id: "contact_name" %>
       </div>
       <div class="space-y-4">
         <%= form.label :company, "会社名", class: "form_label" %>
@@ -32,7 +32,7 @@
       </div>
       <div class="space-y-4">
         <%= form.label :telephone, "電話番号", class: "form_label" %>
-        <%= form.text_field :telephone, placeholder: "電話番号", class: "text_field w-full sm:w-6/12" %>
+        <%= form.text_field :telephone, placeholder: "電話番号", class: "text_field w-full sm:w-6/12", id: "contact_telephone" %>
       </div>
 
       <div>
@@ -70,13 +70,13 @@
 
       <div class="space-y-4">
         <%= form.label :will, "ITコーチを活用し実現したいこと", class: "form_label" %>
-        <%= form.text_area :will, placeholder: "実現したいこと", rows: 4, class: "text_field w-full sm:w-6/12" %>
+        <%= form.text_area :will, placeholder: "実現したいこと", rows: 4, class: "text_field w-full sm:w-6/12", id: "contact_will" %>
       </div>
 
       <div class="space-y-4">
         <%= form.label :budget, "予算", class: "form_label" %>
         <span class="sub_text">（SNS・EC・Webの制作・開発・広告などの月額予算目安）</span>
-        <%= form.select :budget, Budget.all.pluck(:range, :id), {}, class: "block text_field w-full sm:w-6/12 bg-white" %>
+        <%= form.select :budget, Budget.all.pluck(:range, :id), {}, class: "block text_field w-full sm:w-6/12 bg-white", id: "contact_budget" %>
       </div>
 
       <div class="space-y-4 w-full sm:w-6/12">
@@ -120,7 +120,7 @@
 
       <div class="space-y-4">
       <div class="flex items-center space-x-4">
-        <%= form.check_box :privacy, class: "text_field inline-block w-6 h-6" %>
+        <%= form.check_box :privacy, class: "text_field inline-block w-6 h-6", id: "contact_privacy" %>
         <%= form.label :privacy, "プライバシーポリシーに同意する", class: "base_text" %>
       </div>
         <p class="sub_text underline cursor-pointerr"><%= link_to "プライバシーポリシーはこちら", privacy_path %></p>
