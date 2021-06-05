@@ -10,6 +10,8 @@ class Itcoach::EntriesController < ApplicationController
     @form = Entry.new(entry_params)
     if @form.valid?
       @form.save
+      Emails::User.entry(@form).deliver_now
+      Emails::Admin.entry(@form).deliver_now
       redirect_to itcoach_complete_path
     else
       render :show
