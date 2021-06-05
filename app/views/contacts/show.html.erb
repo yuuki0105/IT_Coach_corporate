@@ -20,6 +20,8 @@
 
     <%= form_with model: @form, url: contact_path, local: true, method: :post, class: "space-y-8" do |form| %>
 
+      <%= render "shared/errors", model: @form %>
+
       <div class="space-y-4">
         <%= form.label :name, "名前", class: "form_label" %>
         <%= form.text_field :name, placeholder: "名前", class: "text_field w-full sm:w-6/12", id: "contact_name" %>
@@ -76,7 +78,7 @@
 
       <div class="space-y-4">
         <%= form.label :will, "ITコーチを活用し実現したいこと", class: "form_label" %>
-        <%= form.text_area :will, placeholder: "実現したいこと", rows: 4, class: "text_field w-full sm:w-6/12", id: "contact_will" %>
+        <%= form.text_area :will, placeholder: "実現したいこと", rows: 4, class: "text_field w-full sm:w-6/12", id: "contact_will", maxlength: 255 %>
       </div>
 
       <div class="space-y-4">
@@ -121,7 +123,7 @@
 
       <div class="space-y-4">
         <%= form.label :other, "その他", class: "form_label" %>
-        <%= form.text_area :other, placeholder: "その他問い合わせ事項がありましたらご記入ください。", rows: 4, class: "text_field w-full sm:w-6/12" %>
+        <%= form.text_area :other, placeholder: "その他問い合わせ事項がありましたらご記入ください。", rows: 4, class: "text_field w-full sm:w-6/12", maxlength: 255 %>
       </div>
 
       <div class="space-y-4">

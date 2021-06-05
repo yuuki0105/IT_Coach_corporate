@@ -25,6 +25,8 @@ Webマーケティング,Web制作,ビジネスマナー,コミュニケーシ�
 
       <%= form_with model: @form, url: itcoach_entry_path, local: true, method: :post, class: "space-y-8" do |form| %>
 
+        <%= render "shared/errors", model: @form %>
+
         <div class="space-y-4">
           <%= form.label :name, "名前", class: "form_label" %>
           <%= form.text_field :name, placeholder: "名前", class: "text_field w-full sm:w-6/12", id: "entry_name" %>
@@ -93,12 +95,12 @@ Webマーケティング,Web制作,ビジネスマナー,コミュニケーシ�
 
         <div class="space-y-4">
           <%= form.label :specialty, "得意なこと", class: "form_label" %>
-          <%= form.text_area :specialty, rows: 5, placeholder: "（例1）Instagramで美容院・クリニックの集客支援をするのが得意です。\n（例2）ホームページ作成が得意です。20社以上のHPを主にWordpressでつくってきました。", class: "text_field w-full sm:w-6/12", id: "entry_specialty" %>
+          <%= form.text_area :specialty, rows: 5, placeholder: "（例1）Instagramで美容院・クリニックの集客支援をするのが得意です。\n（例2）ホームページ作成が得意です。20社以上のHPを主にWordpressでつくってきました。", class: "text_field w-full sm:w-6/12", id: "entry_specialty", maxlength: 255 %>
         </div>
 
       <div class="space-y-4">
         <%= form.label :other, "その他", class: "form_label" %>
-        <%= form.text_area :other, placeholder: "その他問い合わせ事項がありましたらご記入ください。", rows: 4, class: "text_field w-full sm:w-6/12" %>
+        <%= form.text_area :other, placeholder: "その他問い合わせ事項がありましたらご記入ください。", rows: 4, class: "text_field w-full sm:w-6/12", maxlength: 255 %>
       </div>
 
         <div class="space-y-4">

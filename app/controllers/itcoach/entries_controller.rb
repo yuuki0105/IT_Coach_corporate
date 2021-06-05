@@ -8,6 +8,7 @@ class Itcoach::EntriesController < ApplicationController
 
   def create
     @form = Entry.new(entry_params)
+    @form.portfolios.build if @form.portfolios.blank?
     if @form.valid?
       @form.save
       Emails::User.entry(@form).deliver_now
