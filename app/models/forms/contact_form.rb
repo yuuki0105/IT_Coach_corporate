@@ -1,7 +1,24 @@
 class Forms::ContactForm
   include ActiveModel::Model
+  include ActiveModel::Validations
+  include ActiveModel::Attributes
 
   attr_accessor :contact, :name, :company, :role, :email, :telephone, :will, :budget, :tech_ability, :business_manner, :communication_ability, :other, :privacy, :category_ids, :source_route_ids
+
+  validates :name , presence: true
+  validates :company , presence: true
+  validates :role , presence: true
+  validates :email , presence: true
+  validates :telephone , presence: true
+  validates :will , presence: true, length: { maximum: 255 }
+  validates :budget , presence: true
+  validates :tech_ability , presence: true, inclusion: { in: AbilityLevel.all.map(&:id) }
+  validates :business_manner , presence: true, inclusion: { in: AbilityLevel.all.map(&:id) }
+  validates :communication_ability , presence: true, inclusion: { in: AbilityLevel.all.map(&:id) }
+  validates :other , presence: true, length: { maximum: 255 }
+  validates :privacy , presence: true
+  validates :category_ids , presence: true
+  validates :source_route_ids , presence: true
 
   def set_attributes(attributes)
     self.name = attributes[:name]

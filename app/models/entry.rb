@@ -28,6 +28,16 @@ class Entry < ApplicationRecord
   accepts_nested_attributes_for :portfolios, allow_destroy: true, reject_if: :all_blank
 
   # Validations
+  validates :name , presence: true
+  validates :email , presence: true
+  validates :telephone , presence: true
+  validates :specialty , presence: true, length: { maximum: 255 }
+  validates :other , presence: true, length: { maximum: 255 }
+  validates :privacy , presence: true
+  validates :categories , presence: true
+  validates :source_routes , presence: true
+  validates :careers , presence: true
+  validates :portfolios , presence: true
 
   # Callbacks
 

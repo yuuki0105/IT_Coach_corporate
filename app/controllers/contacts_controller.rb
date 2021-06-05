@@ -7,12 +7,15 @@ class ContactsController < ApplicationController
   def create
     @form = Forms::ContactForm.new
     @form.set_attributes(contact_parmas)
-    @form.save
-    #last変える
-    @contact = @form.contact
-    Emails::User.contact(@contact).deliver_now
-    Emails::Admin.contact(@contact).deliver_now
-    redirect_to contact_complete_path
+    if @form.valid?
+      @form.save
+      @contact = @form.contact
+      Emails::User.contact(@contact).deliver_now
+      Emails::Admin.contact(@contact).deliver_now
+      redirect_to contact_complete_path
+    else
+      render :show
+    end
   end
 
   private

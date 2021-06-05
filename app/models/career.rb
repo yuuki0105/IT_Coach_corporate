@@ -26,6 +26,9 @@ class Career < ApplicationRecord
   belongs_to :entry
 
   # Validations
+  validates :organization , presence: true
+  validates :role , presence: true
+  validates :start_month , presence: true
 
   # Callbacks
 

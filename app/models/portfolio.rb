@@ -23,6 +23,8 @@ class Portfolio < ApplicationRecord
   belongs_to :entry
 
   # Validations
+  validates :title, presence: true, length: { maximum: 255 }
+  validates :url, length: { maximum: 255 }
 
   # Callbacks
 
