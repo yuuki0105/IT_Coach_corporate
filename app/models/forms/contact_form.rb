@@ -1,7 +1,7 @@
 class Forms::ContactForm
   include ActiveModel::Model
 
-  attr_accessor :name, :company, :role, :email, :telephone, :will, :budget, :tech_ability, :business_manner, :communication_ability, :other, :privacy, :category_ids, :source_route_ids
+  attr_accessor :contact, :name, :company, :role, :email, :telephone, :will, :budget, :tech_ability, :business_manner, :communication_ability, :other, :privacy, :category_ids, :source_route_ids
 
   def set_attributes(attributes)
     self.name = attributes[:name]
@@ -22,7 +22,7 @@ class Forms::ContactForm
 
   def save
     ApplicationRecord.transaction do
-      contact = Contact.create(name: name, company: company, role: role, email: email, telephone: telephone, will: will, budget_id: budget, tech_ability_id: tech_ability, business_manner_id: business_manner, communication_ability_id: communication_ability, other: other, privacy: privacy)
+      @contact = Contact.create(name: name, company: company, role: role, email: email, telephone: telephone, will: will, budget_id: budget, tech_ability_id: tech_ability, business_manner_id: business_manner, communication_ability_id: communication_ability, other: other, privacy: privacy)
       categories.each do |category|
         contact.contact_categories.create(category: category)
       end
