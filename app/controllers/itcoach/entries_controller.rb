@@ -1,5 +1,7 @@
 class Itcoach::EntriesController < ApplicationController
 
+  protect_from_forgery
+
   def show
     @form = Entry.new
     @form.careers.build if @form.careers.blank?
