@@ -2,19 +2,25 @@
 #
 # Table name: entries
 #
-#  id         :bigint           not null, primary key
-#  name       :string(255)      not null
-#  email      :string(255)      not null
-#  telephone  :string(255)      not null
-#  specialty  :text(65535)      not null
-#  privacy    :boolean          default(FALSE), not null
-#  other      :text(65535)
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id             :bigint           not null, primary key
+#  name           :string(255)      not null
+#  email          :string(255)      not null
+#  telephone      :string(255)      not null
+#  specialty      :text(65535)      not null
+#  minimum_fee_id :integer          not null
+#  max_fee_id     :integer          not null
+#  privacy        :boolean          default(FALSE), not null
+#  other          :text(65535)
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
 #
 class Entry < ApplicationRecord
 
   # Relations
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :minimum_fee
+  belongs_to :max_fee
+
   has_many :portfolios
   has_many :careers
 
@@ -32,7 +38,9 @@ class Entry < ApplicationRecord
   validates :email , presence: true
   validates :telephone , presence: true
   validates :specialty , presence: true, length: { maximum: 255 }
-  validates :other , presence: true, length: { maximum: 255 }
+  validates :minimum_fee_id , presence: true
+  validates :max_fee_id , presence: true
+  validates :other , length: { maximum: 255 }
   validates :privacy , presence: true
   validates :categories , presence: true
   validates :source_routes , presence: true

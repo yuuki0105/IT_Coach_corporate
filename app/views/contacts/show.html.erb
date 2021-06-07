@@ -4,7 +4,7 @@
 <% content_for :og_title, "問い合わせ | 株式会社IT Coach" %>
 <% content_for :og_description, "問い合わせページ" %>
 
-<div class="space-y-4 sm:space-y-6 bg-backgroundGray pt-4 sm:pt-6 pb-20 sm:pb-30">
+<div class="space-y-8 sm:space-y-12 bg-backgroundGray pt-4 sm:pt-6 pb-20 sm:pb-30">
   <div class="py-12 sm:py-20 bg-white px-5 sm:px-30">
     <div class="text-center">
       <h1 class="h1_text">問い合わせ</h1>
@@ -12,34 +12,51 @@
       <p class="sub_text mt-3">※すべて必須入力（「その他」の項目を除く）</p>
     </div>
 
-    <%= form_with model: @form, url: contact_path, local: true, method: :post, class: "space-y-8" do |form| %>
+    <%= form_with model: @form, url: contact_path, local: true, method: :post, class: "space-y-16" do |form| %>
 
       <%= render "shared/errors", model: @form %>
 
       <div class="space-y-4">
-        <%= form.label :name, "名前", class: "form_label" %>
+        <div class="flex items-center">
+          <%= form.label :name, "名前", class: "form_label" %>
+          <span class="sub_text">（必須）</span>
+        </div>
         <%= form.text_field :name, placeholder: "名前", class: "text_field w-full sm:w-6/12", id: "contact_name" %>
       </div>
       <div class="space-y-4">
-        <%= form.label :company, "会社名", class: "form_label" %>
+        <div class="flex items-center">
+          <%= form.label :company, "会社名", class: "form_label" %>
+          <span class="sub_text">（必須）</span>
+        </div>
         <%= form.text_field :company, placeholder: "会社名", class: "text_field w-full sm:w-6/12" %>
       </div>
       <div class="space-y-4">
-        <%= form.label :role, "役職", class: "form_label" %>
+        <div class="flex items-center">
+          <%= form.label :role, "役職", class: "form_label" %>
+          <span class="sub_text">（必須）</span>
+        </div>
         <%= form.text_field :role, placeholder: "役職", class: "text_field w-full sm:w-6/12" %>
       </div>
       <div class="space-y-4">
-        <%= form.label :email, "メールアドレス", class: "form_label" %>
+        <div class="flex items-center">
+          <%= form.label :email, "メールアドレス", class: "form_label" %>
+          <span class="sub_text">（必須）</span>
+        </div>
         <%= form.text_field :email, placeholder: "メールアドレス", class: "text_field w-full sm:w-6/12" %>
       </div>
       <div class="space-y-4">
-        <%= form.label :telephone, "電話番号", class: "form_label" %>
+        <div class="flex items-center">
+          <%= form.label :telephone, "電話番号", class: "form_label" %>
+          <span class="sub_text">（必須）</span>
+        </div>
         <%= form.text_field :telephone, placeholder: "電話番号", class: "text_field w-full sm:w-6/12", id: "contact_telephone" %>
       </div>
 
       <div>
-        <label class="form_label">サービスを知ったきっかけ</label>
-        <span class="sub_text">（複数選択可）</span>
+        <div class="flex items-center">
+          <label class="form_label">サービスを知ったきっかけ</label>
+          <span class="sub_text">（必須）※複数選択可</span>
+        </div>
         <div class="space-y-4 grid grid-cols-2 sm:grid-cols-4">
           <%= form.collection_check_boxes :source_route_ids, SourceRoute.all, :id, :title do |b| %>
             <%= b.label class:"flex items-center space-x-2" do %>
@@ -51,8 +68,10 @@
       </div>
 
       <div>
-        <label class="form_label">ITコーチに相談したいジャンル</label>
-        <span class="sub_text">（複数選択可）</span>
+        <div class="flex items-center">
+          <label class="form_label">ITコーチに相談したいジャンル</label>
+          <span class="sub_text">（必須）※複数選択可</span>
+        </div>
           <div class="space-y-8 mt-4">
             <% BigCategory.all.each do |big_category| %>
               <div>
@@ -71,18 +90,26 @@
       </div>
 
       <div class="space-y-4">
-        <%= form.label :will, "ITコーチを活用し実現したいこと", class: "form_label" %>
+        <div class="flex items-center">
+          <%= form.label :will, "ITコーチを活用し実現したいこと", class: "form_label" %>
+          <span class="sub_text">（必須：255文字以内）</span>
+        </div>
         <%= form.text_area :will, placeholder: "実現したいこと", rows: 4, class: "text_field w-full sm:w-6/12", id: "contact_will", maxlength: 255 %>
       </div>
 
       <div class="space-y-4">
-        <%= form.label :budget, "予算", class: "form_label" %>
-        <span class="sub_text">（SNS・EC・Webの制作・開発・広告などの月額予算目安）</span>
-        <%= form.select :budget, Budget.all.pluck(:range, :id), {}, class: "block text_field w-full sm:w-6/12 bg-white", id: "contact_budget" %>
+        <div class="flex items-center">
+          <%= form.label :budget, "予算", class: "form_label" %>
+          <span class="sub_text">（必須）</span>
+        </div>
+        <%= form.select :budget, Budget.all.pluck(:range, :id), { prompt: "SNS・EC・Webの制作・開発・広告などの月額予算目安" }, class: "block text_field w-full sm:w-6/12 bg-white", id: "contact_budget" %>
       </div>
 
       <div class="space-y-4 w-full sm:w-6/12">
-        <label class="form_label">ITコーチに求める能力</label>
+        <div class="flex items-center">
+          <label class="form_label">ITコーチに求める能力</label>
+          <span class="sub_text">（必須）</span>
+        </div>
         <div class="grid grid-cols-5 text-center">
           <label class="col-span-2"></label>
           <% AbilityLevel.all.each do |level| %>
@@ -116,7 +143,10 @@
       </div>
 
       <div class="space-y-4">
-        <%= form.label :other, "その他", class: "form_label" %>
+        <div class="flex items-center">
+          <%= form.label :other, "その他", class: "form_label" %>
+          <span class="sub_text">（任意：255文字以内）</span>
+        </div>
         <%= form.text_area :other, placeholder: "その他問い合わせ事項がありましたらご記入ください。", rows: 4, class: "text_field w-full sm:w-6/12", maxlength: 255 %>
       </div>
 

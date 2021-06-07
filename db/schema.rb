@@ -78,6 +78,8 @@ ActiveRecord::Schema.define(version: 2021_05_31_040524) do
     t.string "email", null: false
     t.string "telephone", null: false
     t.text "specialty", null: false
+    t.integer "minimum_fee_id", null: false
+    t.integer "max_fee_id", null: false
     t.boolean "privacy", default: false, null: false
     t.text "other"
     t.datetime "created_at", precision: 6, null: false

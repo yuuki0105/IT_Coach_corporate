@@ -5,6 +5,8 @@ class CreateEntries < ActiveRecord::Migration[6.1]
       t.string :email, null: false
       t.string :telephone, null: false
       t.text :specialty, null: false
+      t.integer :minimum_fee_id, null: false
+      t.integer :max_fee_id, null: false
       t.boolean :privacy, null: false, default: false
       t.text :other
 

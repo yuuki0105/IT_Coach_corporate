@@ -1,5 +1,7 @@
 class ContactsController < ApplicationController
 
+  protect_from_forgery
+
   def show
     @form = Forms::ContactForm.new
   end

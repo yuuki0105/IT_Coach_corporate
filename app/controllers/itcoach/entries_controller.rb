@@ -1,5 +1,7 @@
 class Itcoach::EntriesController < ApplicationController
 
+  protect_from_forgery
+
   def show
     @form = Entry.new
     @form.careers.build if @form.careers.blank?
@@ -21,7 +23,7 @@ class Itcoach::EntriesController < ApplicationController
 
   private
   def entry_params
-    params.require(:entry).permit(:name, :email, :telephone, :specialty, :privacy, :other, category_ids: [], source_route_ids: [], careers_attributes: [:id, :event_id, :organization, :role, :start_month, :end_month, :_destroy], portfolios_attributes: [:id, :event_id, :title, :url, :_destroy])
+    params.require(:entry).permit(:name, :email, :telephone, :specialty, :minimum_fee_id, :max_fee_id, :privacy, :other, category_ids: [], source_route_ids: [], careers_attributes: [:id, :event_id, :organization, :role, :start_month, :end_month, :_destroy], portfolios_attributes: [:id, :event_id, :title, :url, :_destroy])
   end
 
 end
