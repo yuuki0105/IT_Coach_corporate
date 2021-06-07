@@ -216,6 +216,8 @@ ja:
         email: メールアドレス
         telephone: 電話番号
         specialty: 得意なこと
+        minimum_fee_id: 「希望時給」欄の最低時給
+        max_fee_id: 「希望時給」欄の最高時給
         other: その他
         privacy: プライバシーポリシー
         categories: 保有スキル
