@@ -15,7 +15,7 @@ class Forms::ContactForm
   validates :tech_ability , presence: true, inclusion: { in: AbilityLevel.all.map(&:id) }
   validates :business_manner , presence: true, inclusion: { in: AbilityLevel.all.map(&:id) }
   validates :communication_ability , presence: true, inclusion: { in: AbilityLevel.all.map(&:id) }
-  validates :other , presence: true, length: { maximum: 255 }
+  validates :other , length: { maximum: 255 }
   validates :privacy , presence: true
   validates :category_ids , presence: true
   validates :source_route_ids , presence: true

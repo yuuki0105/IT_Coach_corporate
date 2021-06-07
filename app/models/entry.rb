@@ -32,7 +32,7 @@ class Entry < ApplicationRecord
   validates :email , presence: true
   validates :telephone , presence: true
   validates :specialty , presence: true, length: { maximum: 255 }
-  validates :other , presence: true, length: { maximum: 255 }
+  validates :other , length: { maximum: 255 }
   validates :privacy , presence: true
   validates :categories , presence: true
   validates :source_routes , presence: true
