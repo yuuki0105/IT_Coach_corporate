@@ -27,6 +27,10 @@ module.exports = {
       lineHeight:{
         '12': '3rem'
       },
+      maxWidth:{
+        '960': '960px',
+        '560': '560px',
+      },
     },
   },
   variants: {
