@@ -17,26 +17,37 @@ Webマーケティング,Web制作,ビジネスマナー,コミュニケーシ�
         <p class="sub_text">※不合格の場合も、審査結果連絡から90日後に再エントリーが可能です。</p>
       </div>
 
-      <%= form_with model: @form, url: itcoach_entry_path, local: true, method: :post, class: "space-y-8" do |form| %>
+      <%= form_with model: @form, url: itcoach_entry_path, local: true, method: :post, class: "space-y-16" do |form| %>
 
         <%= render "shared/errors", model: @form %>
 
         <div class="space-y-4">
-          <%= form.label :name, "名前", class: "form_label" %>
+          <div class="flex items-center">
+            <%= form.label :name, "名前", class: "form_label" %>
+            <span class="sub_text">（必須）</span>
+          </div>
           <%= form.text_field :name, placeholder: "名前", class: "text_field w-full sm:w-6/12", id: "entry_name" %>
         </div>
         <div class="space-y-4">
-          <%= form.label :email, "メールアドレス", class: "form_label" %>
+          <div class="flex items-center">
+            <%= form.label :email, "メールアドレス", class: "form_label" %>
+            <span class="sub_text">（必須）</span>
+          </div>
           <%= form.text_field :email, placeholder: "メールアドレス", class: "text_field w-full sm:w-6/12" %>
         </div>
         <div class="space-y-4">
-          <%= form.label :telephone, "電話番号", class: "form_label" %>
+          <div class="flex items-center">
+            <%= form.label :telephone, "電話番号", class: "form_label" %>
+            <span class="sub_text">（必須）</span>
+          </div>
           <%= form.text_field :telephone, placeholder: "電話番号", class: "text_field w-full sm:w-6/12", id: "entry_telephone" %>
         </div>
 
       <div>
-        <label class="form_label">サービスを知ったきっかけ</label>
-        <span class="sub_text">（複数選択可）</span>
+        <div class="flex items-center">
+          <label class="form_label">サービスを知ったきっかけ</label>
+          <span class="sub_text">（必須）※複数選択可</span>
+        </div>
         <div class="space-y-4 grid grid-cols-2 sm:grid-cols-4">
           <%= form.collection_check_boxes :source_route_ids, SourceRoute.all, :id, :title do |b| %>
             <%= b.label class:"flex items-center space-x-2" do %>
@@ -48,8 +59,10 @@ Webマーケティング,Web制作,ビジネスマナー,コミュニケーシ�
       </div>
 
         <div>
-          <label class="form_label">保有スキル</label>
-          <span class="sub_text">（複数選択可）</span>
+          <div class="flex items-center">
+            <label class="form_label">保有スキル</label>
+            <span class="sub_text">（必須）※複数選択可</span>
+          </div>
             <div class="space-y-8 mt-4">
               <% BigCategory.all.each do |big_category| %>
                 <div>
@@ -68,7 +81,10 @@ Webマーケティング,Web制作,ビジネスマナー,コミュニケーシ�
         </div>
 
         <div id="career" class="sm:w-6/12">
-          <label class="form_label">キャリア</label>
+          <div class="flex items-center">
+            <label class="form_label">キャリア</label>
+            <span class="sub_text">（必須）</span>
+          </div>
           <%= form.fields_for :careers do |career| %>
             <%= render "itcoach/entries/career_fields", f: career %>
           <% end %>
@@ -88,12 +104,18 @@ Webマーケティング,Web制作,ビジネスマナー,コミュニケーシ�
         </div>
 
         <div class="space-y-4">
-          <%= form.label :specialty, "得意なこと", class: "form_label" %>
+          <div class="flex items-center">
+            <%= form.label :specialty, "得意なこと", class: "form_label" %>
+            <span class="sub_text">（必須：255文字以内）</span>
+          </div>
           <%= form.text_area :specialty, rows: 5, placeholder: "（例1）Instagramで美容院・クリニックの集客支援をするのが得意です。\n（例2）ホームページ作成が得意です。20社以上のHPを主にWordpressでつくってきました。", class: "text_field w-full sm:w-6/12", id: "entry_specialty", maxlength: 255 %>
         </div>
 
         <div class="space-y-4">
-          <label class="form_label">希望時給</label>
+          <div class="flex items-center">
+            <label class="form_label">希望時給</label>
+            <span class="sub_text">（必須）</span>
+          </div>
           <div class="sm:flex sm:items-center sm:w-6/12 space-y-2 sm:space-y-0 sm:space-x-4">
             <%= form.select :minimum_fee_id, MinimumFee.all.pluck(:yen, :id), { prompt: "最低時給" }, class: "block text_field w-full bg-white", id: "entry_minimum_fee" %>
             <p class="text-center">〜</p>
@@ -102,7 +124,10 @@ Webマーケティング,Web制作,ビジネスマナー,コミュニケーシ�
         </div>
 
       <div class="space-y-4">
-        <%= form.label :other, "その他", class: "form_label" %>
+        <div class="flex items-center">
+          <%= form.label :other, "その他", class: "form_label" %>
+          <span class="sub_text">（任意：255文字以内）</span>
+        </div>
         <%= form.text_area :other, placeholder: "その他問い合わせ事項がありましたらご記入ください。", rows: 4, class: "text_field w-full sm:w-6/12", maxlength: 255 %>
       </div>
 
