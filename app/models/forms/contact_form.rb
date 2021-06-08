@@ -8,7 +8,10 @@ class Forms::ContactForm
   validates :name , presence: true
   validates :company , presence: true
   validates :role , presence: true
-  validates :email , presence: true
+
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, {presence: true, format: { with: VALID_EMAIL_REGEX }}
+
   validates :telephone , presence: true
   validates :will , presence: true, length: { maximum: 255 }
   validates :budget , presence: true
