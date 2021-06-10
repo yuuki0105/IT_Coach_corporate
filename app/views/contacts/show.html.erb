@@ -73,19 +73,14 @@
           <span class="sub_text">（必須）※複数選択可</span>
         </div>
           <div class="space-y-8 mt-4">
-            <% BigCategory.all.each do |big_category| %>
-              <div>
-                <label class="base_text block font-bold"><%= big_category.name %></label>
-                <div class="space-y-4 grid grid-cols-2 sm:grid-cols-4">
-                  <%= form.collection_check_boxes :category_ids, big_category.categories, :id, :name do |b| %>
-                    <%= b.label class:"flex items-center space-x-2" do %>
-                      <%= b.check_box class: "h-5 w-5" %>
-                      <span class="block base_text"><%= b.text %></span>
-                    <% end %>
+              <div class="space-y-4 grid grid-cols-2 sm:grid-cols-4">
+                <%= form.collection_check_boxes :category_ids, Category.all, :id, :name do |b| %>
+                  <%= b.label class:"flex items-center space-x-2" do %>
+                    <%= b.check_box class: "h-5 w-5" %>
+                    <span class="block base_text"><%= b.text %></span>
                   <% end %>
-                </div>
+                <% end %>
               </div>
-            <% end %>
           </div>
       </div>
 
@@ -102,7 +97,7 @@
           <%= form.label :budget, "予算", class: "form_label" %>
           <span class="sub_text">（必須）</span>
         </div>
-        <%= form.select :budget, Budget.all.pluck(:range, :id), { prompt: "SNS・EC・Webの制作・開発・広告などの月額予算目安" }, class: "block text_field w-full sm:w-6/12 bg-white", id: "contact_budget" %>
+        <%= form.select :budget, Budget.all.pluck(:range, :id), { prompt: "制作・広告などの月額予算" }, class: "block text_field w-full sm:w-6/12 bg-white", id: "contact_budget" %>
       </div>
 
       <div class="space-y-4 w-full sm:w-6/12">
