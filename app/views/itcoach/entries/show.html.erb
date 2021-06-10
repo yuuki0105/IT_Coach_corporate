@@ -64,19 +64,14 @@ Webマーケティング,Web制作,ビジネスマナー,コミュニケーシ�
             <span class="sub_text">（必須）※複数選択可</span>
           </div>
             <div class="space-y-8 mt-4">
-              <% BigCategory.all.each do |big_category| %>
-                <div>
-                  <label class="base_text block font-bold"><%= big_category.name %></label>
-                  <div class="space-y-4 grid grid-cols-2 sm:grid-cols-4">
-                    <%= form.collection_check_boxes :category_ids, big_category.categories, :id, :name do |b| %>
-                      <%= b.label class:"flex items-center space-x-2" do %>
-                        <%= b.check_box class: "h-5 w-5" %>
-                        <span class="block base_text"><%= b.text %></span>
-                      <% end %>
-                    <% end %>
-                  </div>
-                </div>
-              <% end %>
+              <div class="space-y-4 grid grid-cols-2 sm:grid-cols-4">
+                <%= form.collection_check_boxes :category_ids, Category.all, :id, :name do |b| %>
+                  <%= b.label class:"flex items-center space-x-2" do %>
+                    <%= b.check_box class: "h-5 web_marketing-5" %>
+                    <span class="block base_text"><%= b.text %></span>
+                  <% end %>
+                <% end %>
+              </div>
             </div>
         </div>
 
