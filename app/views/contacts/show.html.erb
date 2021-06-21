@@ -25,10 +25,10 @@
       </div>
       <div class="space-y-4">
         <div class="flex items-center">
-          <%= form.label :company, "会社名", class: "form_label" %>
+          <%= form.label :company, "会社名・事業者名", class: "form_label" %>
           <span class="sub_text">（必須）</span>
         </div>
-        <%= form.text_field :company, placeholder: "会社名", class: "text_field w-full sm:w-6/12" %>
+        <%= form.text_field :company, placeholder: "会社名・事業者名", class: "text_field w-full sm:w-6/12" %>
       </div>
       <div class="space-y-4">
         <div class="flex items-center">
@@ -86,7 +86,7 @@
 
       <div class="space-y-4">
         <div class="flex items-center">
-          <%= form.label :will, "ITコーチを活用し実現したいこと", class: "form_label" %>
+          <%= form.label :will, "SNS・Webを活用し実現したいこと", class: "form_label" %>
           <span class="sub_text">（必須：255文字以内）</span>
         </div>
         <%= form.text_area :will, placeholder: "実現したいこと", rows: 4, class: "text_field w-full sm:w-6/12", id: "contact_will", maxlength: 255 %>
@@ -97,7 +97,7 @@
           <%= form.label :budget, "予算", class: "form_label" %>
           <span class="sub_text">（必須）</span>
         </div>
-        <%= form.select :budget, Budget.all.pluck(:range, :id), { prompt: "制作・広告などの月額予算" }, class: "block text_field w-full sm:w-6/12 bg-white", id: "contact_budget" %>
+        <%= form.select :budget, Budget.all.pluck(:range, :id), { prompt: "SNS・Webに関する制作・広告などの月額予算" }, class: "block text_field w-full sm:w-6/12 bg-white", id: "contact_budget" %>
       </div>
 
       <div class="space-y-4 w-full sm:w-6/12">
