@@ -20,7 +20,9 @@ big_categories = [
 
   {big_category: "Webマーケティング", categories: ["Webマーケティング"]},
 
-  {big_category: "Web制作", categories: ["Web制作"]}
+  {big_category: "Web制作", categories: ["Web制作"]},
+
+  {big_category: "その他", categories: ["その他"]}
 ]
 
 big_categories.each do |big_category|

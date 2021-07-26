@@ -1,0 +1,51 @@
+<%= @free_consultation_realization.name %>様
+
+IT Coachの無料オンライン相談へお申し込みいただき
+誠にありがとうございます。
+
+3営業日以内に担当者より
+メールアドレスもしくは電話番号へご連絡いたします。
+
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+【無料オンライン相談の申し込み内容】
+
+名前
+<%= @free_consultation_realization.name %>
+
+会社名
+<%= @free_consultation_realization.company %>
+
+役職
+<%= @free_consultation_realization.role %>
+
+メールアドレス
+<%= @free_consultation_realization.email %>
+
+電話番号
+<%= @free_consultation_realization.telephone %>
+
+ITコーチに相談したいジャンル （複数選択可）
+<% BigCategory.all.each do |big_category| %>
+  [<%= big_category.name %>]
+  <% @free_consultation_realization.categories.where(big_category_id: big_category.id).each do |category| %>
+    <%= category.name %>
+  <% end %>
+<% end %>
+
+ITコーチを活用し実現したいこと
+<%= @free_consultation_realization.will %>
+
+予算 （SNS・EC・Webの制作・開発・広告などの月額予算目安）
+<%= @free_consultation_realization.budget.range %>
+
+その他
+<%= @free_consultation_realization.other %>
+
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+株式会社IT Coach
+カスタマーサポート
+cs@itcoach.co.jp
+
+サービスURL
+https://www.itcoach.co.jp/

@@ -1,15 +1,14 @@
-<% content_for :title, "問い合わせ | 株式会社IT Coach" %>
-<% content_for :meta_description, "問い合わせページです。「社内にSNS・Web活用のノウハウがなく困っている」「IT・Webについては外注しており社内にノウハウが残らない」という企業様はお問い合わせください。" %>
+<% content_for :title, "無料オンライン相談申し込み | 株式会社IT Coach" %>
+<% content_for :meta_description, "無料オンライン相談申し込みページです。" %>
 <% content_for :meta_keywords, "SNSマーケティング,EC・ネットショップ,Webマーケティング,Web制作,Webコンサル,ECコンサル,Webディレクション,戦略,企画,内製化,インハウス" %>
-<% content_for :og_title, "問い合わせ | 株式会社IT Coach" %>
-<% content_for :og_description, "問い合わせページ" %>
+<% content_for :og_title, "無料オンライン相談申し込み | 株式会社IT Coach" %>
+<% content_for :og_description, "無料オンライン相談申し込みページ" %>
 
 <div class="space-y-8 sm:space-y-12 bg-backgroundGray pt-4 sm:pt-6 pb-20 sm:pb-30">
   <div class="py-12 sm:py-20 bg-white px-5 sm:px-30">
     <div class="text-center">
-      <h1 class="h1_text">問い合わせ</h1>
-      <p class="base_text mt-8 sm:mt-6">サービスにご興味をもっていただきありがとうございます。以下のフォームよりご入力ください。</p>
-      <p class="sub_text mt-3">※すべて必須入力（「その他」の項目を除く）</p>
+      <h1 class="h1_text">無料オンライン相談申し込み</h1>
+      <p class="base_text mt-8 sm:mt-6">補助金に関するメルマガよりオンライン相談に興味をもっていただきありがとうございます。<br>無料オンライン相談を希望される方は、以下のフォームよりお申し込みください。<br>弊社担当者より折り返しご連絡をいたします。</p>
     </div>
 
     <%= form_with model: @form, url: free_consultation_realization_path, local: true, method: :post, class: "space-y-16" do |form| %>
