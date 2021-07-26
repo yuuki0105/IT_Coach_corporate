@@ -26,6 +26,9 @@ class Category < ApplicationRecord
   has_many :entry_categories
   has_many :entries, through: :entry_categories
 
+  has_many :free_consultation_realization_categories
+  has_many :free_consultation_realizations, through: :free_consultation_realization_categories
+
   # Validations
 
   # Callbacks

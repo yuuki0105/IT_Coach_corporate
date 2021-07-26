@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_31_040524) do
+ActiveRecord::Schema.define(version: 2021_07_26_014622) do
 
   create_table "big_categories", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -104,6 +104,29 @@ ActiveRecord::Schema.define(version: 2021_05_31_040524) do
     t.index ["source_route_id"], name: "index_entry_source_routes_on_source_route_id"
   end
 
+  create_table "free_consultation_realization_categories", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "category_id"
+    t.bigint "free_consultation_realization_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "category_free_consultation_realization"
+    t.index ["free_consultation_realization_id"], name: "free_consultation_realization_category_id"
+  end
+
+  create_table "free_consultation_realizations", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "company", null: false
+    t.string "role", null: false
+    t.string "email", null: false
+    t.string "telephone", null: false
+    t.text "will", null: false
+    t.integer "budget_id", null: false
+    t.text "other"
+    t.boolean "privacy", default: false, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "portfolios", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "entry_id", null: false
     t.string "title", null: false
@@ -129,5 +152,7 @@ ActiveRecord::Schema.define(version: 2021_05_31_040524) do
   add_foreign_key "entry_categories", "entries"
   add_foreign_key "entry_source_routes", "entries"
   add_foreign_key "entry_source_routes", "source_routes"
+  add_foreign_key "free_consultation_realization_categories", "categories"
+  add_foreign_key "free_consultation_realization_categories", "free_consultation_realizations"
   add_foreign_key "portfolios", "entries"
 end

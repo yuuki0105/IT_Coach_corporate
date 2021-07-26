@@ -16,4 +16,7 @@ Rails.application.routes.draw do
 
   resource :privacy,only: [:show]
 
+  resource :free_consultation_realization,only: [:show, :create]
+  resource :free_consultation_realization_complete,only: [:show]
+
 end

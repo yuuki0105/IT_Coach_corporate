@@ -1,0 +1,2 @@
+module FreeConsultationRealizationCompletesHelper
+end
