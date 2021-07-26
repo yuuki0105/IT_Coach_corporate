@@ -3,4 +3,6 @@ class Emails::User < ApplicationMailer
 
   include Emails::User::Contact
   include Emails::User::Entry
+  include Emails::User::FreeConsultationRealization
+
 end

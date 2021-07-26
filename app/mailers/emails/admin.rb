@@ -3,4 +3,6 @@ class Emails::Admin < ApplicationMailer
 
   include Emails::Admin::Contact
   include Emails::Admin::Entry
+  include Emails::Admin::FreeConsultationRealization
+
 end
