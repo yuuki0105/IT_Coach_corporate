@@ -13,7 +13,7 @@ Webマーケティング,Web制作,ビジネスマナー,コミュニケーシ�
       <div class="space-y-2 mt-4">
         <p class="sub_text">※すべて必須記入項目となります。（ポートフォリオのURLを除く）</p>
         <p class="sub_text">※書面審査結果は、エントリーフォームへの入力後1週間以内に登録メールアドレスへお送りします。</p>
-        <p class="sub_text">※合格の場合は、次のプロセスの面談審査へ進んでいただけます。</p>
+        <%#= <p class="sub_text">※合格の場合は、次のプロセスの面談審査へ進んでいただけます。</p> %>
         <p class="sub_text">※不合格の場合も、審査結果連絡から90日後に再エントリーが可能です。</p>
       </div>
 
@@ -101,7 +101,7 @@ Webマーケティング,Web制作,ビジネスマナー,コミュニケーシ�
         <div class="space-y-4">
           <div class="flex items-center">
             <%= form.label :specialty, "得意なこと", class: "form_label" %>
-            <span class="sub_text">（必須：255文字以内）</span>
+            <span class="sub_text">（必須：200文字以内）</span>
           </div>
           <%= form.text_area :specialty, rows: 5, placeholder: "（例1）Instagramで美容院・クリニックの集客支援をするのが得意です。\n（例2）ホームページ作成が得意です。20社以上のHPを主にWordpressでつくってきました。", class: "text_field w-full sm:w-6/12", id: "entry_specialty", maxlength: 255 %>
         </div>
@@ -121,7 +121,7 @@ Webマーケティング,Web制作,ビジネスマナー,コミュニケーシ�
       <div class="space-y-4">
         <div class="flex items-center">
           <%= form.label :other, "その他", class: "form_label" %>
-          <span class="sub_text">（任意：255文字以内）</span>
+          <span class="sub_text">（任意：200文字以内）</span>
         </div>
         <%= form.text_area :other, placeholder: "その他問い合わせ事項がありましたらご記入ください。", rows: 4, class: "text_field w-full sm:w-6/12", maxlength: 255 %>
       </div>

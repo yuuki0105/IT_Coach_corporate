@@ -69,7 +69,7 @@
 
       <div>
         <div class="flex items-center">
-          <label class="form_label">ITコーチに相談したいジャンル</label>
+          <label class="form_label">SNS・Webを活用し実施したいこと</label>
           <span class="sub_text">（必須）※複数選択可</span>
         </div>
           <div class="space-y-8 mt-4">
@@ -86,10 +86,10 @@
 
       <div class="space-y-4">
         <div class="flex items-center">
-          <%= form.label :will, "SNS・Webを活用し実現したいこと", class: "form_label" %>
-          <span class="sub_text">（必須：255文字以内）</span>
+          <%= form.label :will, "SNS・Webを活用し実施したいこと", class: "form_label" %>
+          <span class="sub_text">（必須：200文字以内）</span>
         </div>
-        <%= form.text_area :will, placeholder: "実現したいこと", rows: 4, class: "text_field w-full sm:w-6/12", id: "contact_will", maxlength: 255 %>
+        <%= form.text_area :will, placeholder: "実施したいこと", rows: 4, class: "text_field w-full sm:w-6/12", id: "contact_will", maxlength: 255 %>
       </div>
 
       <div class="space-y-4">
@@ -100,47 +100,54 @@
         <%= form.select :budget, Budget.all.pluck(:range, :id), { prompt: "SNS・Webに関する制作・広告などの月額予算" }, class: "block text_field w-full sm:w-6/12 bg-white", id: "contact_budget" %>
       </div>
 
-      <div class="space-y-4 w-full sm:w-6/12">
-        <div class="flex items-center">
-          <label class="form_label">ITコーチに求める能力</label>
-          <span class="sub_text">（必須）</span>
-        </div>
-        <div class="grid grid-cols-5 text-center">
-          <label class="col-span-2"></label>
-          <% AbilityLevel.all.each do |level| %>
-            <label class="sub_text"><%= level.name %></label>
-          <% end %>
-        </div>
-        <div class="items-center grid grid-cols-5">
-          <%= form.label :tech_ability, "技術力", class: "base_text col-span-2" %>
-          <% AbilityLevel.all.each do |level| %>
-            <div class="text-center">
-              <%= form.radio_button :tech_ability, level.id, class: "w-6 h-6" %>
-            </div>
-          <% end %>
-        </div>
-        <div class="items-center grid grid-cols-5">
-          <%= form.label :business_manner, "ビジネスマナー", class: "base_text  col-span-2" %>
-          <% AbilityLevel.all.each do |level| %>
-            <div class="text-center">
-              <%= form.radio_button :business_manner, level.id, class: "w-6 h-6" %>
-            </div>
-          <% end %>
-        </div>
-        <div class="items-center grid grid-cols-5">
-          <%= form.label :communication_ability, "コミュニケーション能力", class: "base_text col-span-2" %>
-          <% AbilityLevel.all.each do |level| %>
-            <div class="text-center">
-              <%= form.radio_button :communication_ability, level.id, class: "w-6 h-6" %>
-            </div>
-          <% end %>
-        </div>
-      </div>
+      <%#=
+        <div class="space-y-4 w-full sm:w-6/12">
+          <div class="flex items-center">
+            <label class="form_label">ITコーチに求める能力</label>
+            <span class="sub_text">（必須）</span>
+          </div>
+          <div class="grid grid-cols-5 text-center">
+            <label class="col-span-2"></label>
+            <% AbilityLevel.all.each do |level| %>
+      <%#=
+              <label class="sub_text"><%= level.name %>      <%#=
+</label>
+            <% end %>
+            <%#=
+    </div>
+          <div class="items-center grid grid-cols-5">
+            <%= form.label :tech_ability, "技術力", class: "base_text col-span-2" %>
+      <%#=
+      <% AbilityLevel.all.each do |level| %>
+      <%#=
+        <div class="text-center">
+                <%= form.radio_button :tech_ability, level.id, class: "w-6 h-6" %>
+      <%#=        </div>
+            <% end %>
+      <%#=    </div>
+          <div class="items-center grid grid-cols-5">
+            <%= form.label :business_manner, "ビジネスマナー", class: "base_text  col-span-2" %>
+      <%#=      <% AbilityLevel.all.each do |level| %>
+      <%#=        <div class="text-center">
+                <%= form.radio_button :business_manner, level.id, class: "w-6 h-6" %>
+      <%#=        </div>
+            <% end %>
+      <%#=    </div>
+          <div class="items-center grid grid-cols-5">
+            <%= form.label :communication_ability, "コミュニケーション能力", class: "base_text col-span-2" %>
+      <%#=      <% AbilityLevel.all.each do |level| %>
+      <%#=        <div class="text-center">
+                <%= form.radio_button :communication_ability, level.id, class: "w-6 h-6" %>
+      <%#=        </div>
+            <% end %>
+      <%#=    </div>
+        </div>　
+      %>
 
       <div class="space-y-4">
         <div class="flex items-center">
           <%= form.label :other, "その他", class: "form_label" %>
-          <span class="sub_text">（任意：255文字以内）</span>
+          <span class="sub_text">（任意：200文字以内）</span>
         </div>
         <%= form.text_area :other, placeholder: "その他問い合わせ事項がありましたらご記入ください。", rows: 4, class: "text_field w-full sm:w-6/12", maxlength: 255 %>
       </div>
