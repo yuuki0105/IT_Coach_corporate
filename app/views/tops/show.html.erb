@@ -2,14 +2,14 @@
   <div class="bg-white text-center sm:text-left">
     <%= image_tag 'main_visual_sp.png',class: "sm:hidden mx-auto" %>
     <div class="sm:hidden px-5 pb-12 space-y-12">
-      <h1 class="text-primary h1_text_top">SNS・EC・WebマーケティングをITコーチがサポート</h1>
+      <h1 class="text-primary h1_text_top">SNS・Webマーケティングをコーチがサポート</h1>
 
-      <p class="base_text">「IT Coach」は<br>企業や事業者がSNSやWebを使い実現したいことを<br>できるようになるまで支援する<br class="sm:hidden">オンラインコーチサービスです。</p>
+      <p class="base_text">「IT Coach」は<br>クライアントのSNSやWebの活用を<br>サポートする<br class="sm:hidden">オンラインコーチサービスです。</p>
     </div>
     <div class="hidden sm:flex justify-between items-center pl-30">
       <div class="space-y-10">
-        <h1 class="text-primary h1_text_top">SNS・EC・Webマーケティングを<br>ITコーチがサポート</h1>
-        <p class="base_text">「IT Coach」は<br>企業や事業者がSNSやWebをつかって実現したいことを<br>できるようになるまで支援する<br class="sm:hidden">オンラインコーチサービスです。</p>
+        <h1 class="text-primary h1_text_top">SNS・Webマーケティングを<br>コーチがサポート</h1>
+        <p class="base_text">「IT Coach」は<br>クライアントのSNSやWebの活用を<br>サポートする<br class="sm:hidden">オンラインコーチサービスです。</p>
       </div>
       <%= image_tag 'main_visual_pc.png',class: "hidden sm:block w-2/5" %>
     </div>
@@ -317,7 +317,7 @@
         </div>
         <div class="flex border-t border-b border-blank py-4">
           <dt class="base_text font-bold w-3/12 sm:w-2/12">事業内容</dt>
-          <dd class="base_text w-9/12 sm:w-10/12">SNS・EC・Webマーケティングのオンラインコーチ</dt>
+          <dd class="base_text w-9/12 sm:w-10/12">SNS・Web活用のオンラインコーチ</dt>
         </div>
       </dl>
 
@@ -380,6 +380,11 @@
         <dd class="base_text sm:w-9/12">本社オフィスを渋谷に移転</dt>
       </div>
 
+      <div class="sm:flex border-b border-blank py-4 space-y-2 sm:space-y-0">
+        <dt class="base_text font-bold sm:w-3/12">2021年7月14日</dt>
+        <dd class="base_text sm:w-9/12"> <%= link_to "インタビュー掲載（事業再構築補助金の採択事例）", "https://hojyokin-reali.com/jigyou/2021/07/14/interview-3/" , target: "_blank", class: "underline" %></dt>
+      </div>
+
     </dl>
   </div>
     <%# ニュースここまで　%>
@@ -388,7 +393,9 @@
 
 <div class="fixed bottom-0 right-0 left-0">
   <div class="bg-white py-3 sm:py-6 px-5 sm:px-30 space-y-4 sm:space-y-0 sm:space-x-20 sm:flex sm:justify-center">
-    <%= link_to "ITコーチになる", itcoach_recruitment_path, class: "button_sub", id: "tops_fixed_footer_itcoach_recruitment" %>
-    <%= link_to "ITコーチを活用する", contact_path, class: "button_main", id: "tops_fixed_footer_contact" %>
+    <%#= link_to "ITコーチになる", itcoach_recruitment_path, class: "button_sub", id: "tops_fixed_footer_itcoach_recruitment" %>
+    <%#= link_to "問い合わせ", contact_path, class: "button_main", id: "tops_fixed_footer_contact" %>
+
+    <%= link_to "問い合わせ", contact_path, class: "button_gradation bg_gradation", id: "tops_service_contact" %>
   </div>
 </div>

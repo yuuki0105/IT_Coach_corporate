@@ -53,7 +53,7 @@
 
       <div>
         <div class="flex items-center">
-          <label class="form_label">ITコーチに相談したいジャンル</label>
+          <label class="form_label">SNS・Webを活用し実施したいこと</label>
           <span class="sub_text">（必須）※複数選択可</span>
         </div>
           <div class="space-y-8 mt-4">
@@ -70,10 +70,10 @@
 
       <div class="space-y-4">
         <div class="flex items-center">
-          <%= form.label :will, "SNS・Webを活用し実現したいこと", class: "form_label" %>
-          <span class="sub_text">（必須：255文字以内）</span>
+          <%= form.label :will, "SNS・Webを活用し実施したいこと", class: "form_label" %>
+          <span class="sub_text">（必須：200文字以内）</span>
         </div>
-        <%= form.text_area :will, placeholder: "実現したいこと", rows: 4, class: "text_field w-full sm:w-6/12", id: "contact_will", maxlength: 255 %>
+        <%= form.text_area :will, placeholder: "実施したいこと", rows: 4, class: "text_field w-full sm:w-6/12", id: "contact_will", maxlength: 255 %>
       </div>
 
       <div class="space-y-4">
@@ -87,7 +87,7 @@
       <div class="space-y-4">
         <div class="flex items-center">
           <%= form.label :other, "その他", class: "form_label" %>
-          <span class="sub_text">（任意：255文字以内）</span>
+          <span class="sub_text">（任意：200文字以内）</span>
         </div>
         <%= form.text_area :other, placeholder: "その他問い合わせ事項がありましたらご記入ください。", rows: 4, class: "text_field w-full sm:w-6/12", maxlength: 255 %>
       </div>
