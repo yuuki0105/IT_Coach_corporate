@@ -40,7 +40,7 @@
   <div class="bg-white py-12 sm:py-20 px-5 sm:px-30 sm:text-left space-y-16 sm:space-y-32">
     <div>
       <h2 class="text-primary h2_text text-center">サービス</h2>
-      <p class="base_text mt-6 sm:text-center">SNSやWebを活用した戦略・企画・制作・運用・集客をITに強いコーチが支援します。</p>
+      <p class="base_text mt-6 sm:text-center">SNS・Web・ECなどの戦略・企画・制作・運用・集客をITに強いコーチが支援します。</p>
     </div>
     <div class="text-center">
       <div class="space-y-6">
@@ -54,8 +54,8 @@
               <%= image_tag 'big_category/sns/instagram_logo.svg', class: "h-6 sm:h-full" %>
               <%= image_tag 'big_category/sns/twitter_logo.svg', class: "h-6 sm:h-full" %>
               <%= image_tag 'big_category/sns/line_logo.svg', class: "h-6 sm:h-full" %>
-              <%= image_tag 'big_category/sns/youtube_logo.svg', class: "h-5 sm:h-full" %>
             </div>
+            <p class="sub_text mt-4">主要取り扱いメディア：Facebook・Instagram・Twitter・LINEなど</p>
           </div>
           <div class="bg_primaryPale_textbox py-6 sm:py-8 px-4 sm:px-6">
             <h4 class="h4_text">Webマーケティング</h4>
@@ -66,6 +66,7 @@
               <%= image_tag 'big_category/web_marketing/google_mybusiness_logo.svg', class: "h-6 sm:h-full" %>
               <%= image_tag 'big_category/web_marketing/yahoo_logo.svg', class: "h-5 sm:h-full" %>
             </div>
+            <p class="sub_text mt-4">主要取り扱いメディア：Google・Yahoo!など</p>
           </div>
           <div class="bg_primaryPale_textbox py-6 sm:py-8 px-4 sm:px-6">
             <h4 class="h4_text">EC・ネットショップ</h4>
@@ -77,6 +78,7 @@
                 <%= image_tag 'big_category/ec/base_logo.svg', class: "h-6 sm:h-full" %>
                 <%= image_tag 'big_category/ec/stripe_logo.svg', class: "h-5 sm:h-full" %>
               </div>
+            <p class="sub_text mt-4">主要取り扱いメディア・ツール：Amazon・Shopify・BASE・stripeなど</p>
               <%# <div class="flex justify-around items-center mt-6 sm:mt-8">
                 <%= image_tag 'big_category/ec/rakuten_logo.svg', class: "h-5 sm:h-full" %>
                 <%#<%= image_tag 'big_category/ec/colorme_logo.svg', class: "h-5 sm:h-full" %>
@@ -94,6 +96,7 @@
                 <%= image_tag 'big_category/web_production/wordpress_logo.svg', class: "h-6 sm:h-full" %>
                 <%= image_tag 'big_category/web_production/wix_logo.svg', class: "h-5 sm:h-full" %>
               </div>
+              <p class="sub_text mt-4">主要取り扱いツール：illustrator・Photoshop・Wordpress・Wixなど</p>
               <%# <div class="flex justify-around items-center mt-6 sm:mt-8">
                 <%= image_tag 'big_category/web_production/xd_logo.svg', class: "h-6 sm:h-full" %>
                 <%#<%= image_tag 'big_category/web_production/figma_logo.svg', class: "h-6 sm:h-full" %>
@@ -102,6 +105,27 @@
                 <%#<%= image_tag 'big_category/web_production/css_logo.svg', class: "h-6 sm:h-full" %>
               <%# </div> %>
             <%#</div>%>
+          </div>
+          <div class="bg_primaryPale_textbox py-6 sm:py-8 px-4 sm:px-6">
+            <h4 class="h4_text">動画マーケティング</h4>
+            <p class="base_text mt-4">動画SNSのアカウント運用・広告運用の支援</p>
+            <div class="flex justify-around items-center mt-6 sm:mt-8">
+              <%= image_tag 'big_category/movie_marketing/youtube_logo.svg', class: "h-5 sm:h-full" %>
+              <%= image_tag 'big_category/movie_marketing/tiktok_logo.svg', class: "h-6 sm:h-full" %>
+              <%= image_tag 'big_category/movie_marketing/instagram_logo.svg', class: "h-6 sm:h-full" %>
+            </div>
+            <p class="sub_text mt-4">主要取り扱いメディア：Youtube・TikTok・Instagramなど</p>
+          </div>
+          <div class="bg_primaryPale_textbox py-6 sm:py-8 px-4 sm:px-6">
+            <h4 class="h4_text">補助金を活用したIT導入</h4>
+            <p class="base_text mt-4">SNS・Web・ECに活用できる補助金の獲得支援</p>
+            <div class="flex justify-around items-center mt-6 sm:mt-8">
+              <%= image_tag 'big_category/hojyokin/jizoku.svg', class: "h-3.5 sm:h-6" %>
+              <%= image_tag 'big_category/hojyokin/itdonyu.svg', class: "h-3.5 sm:h-6" %>
+              <%= image_tag 'big_category/hojyokin/jigyo.svg', class: "h-3.5 sm:h-6" %>
+
+            </div>
+            <p class="sub_text mt-4">主要取り扱い補助金：持続化補助金・IT導入補助金・事業再構築補助金など</p>
           </div>
         </div>
         <p class="sub_text">※主要なジャンル・メディア・ツールを掲載しております。上記にないものでもIT関連であれば対応できますので、<br class="sm:hidden"><%= link_to "問い合わせフォーム" ,contact_path, class: "text-black underline cursor-pointer" %>よりお問い合わせをお願いします。</p>
@@ -116,7 +140,7 @@
 
           <div class=space-y-4>
             <h4 class="h4_text">1、審査・選抜されたコーチ陣</h4>
-            <%= image_tag 'coach_member.png', class: "rounded mx-autobase_text" %>
+            <%= image_tag 'coach_member.png', class: "rounded mx-auto" %>
             <div class="text-left base_text">
               <ul>
                 <li>・ビジネスマナー</li>
@@ -172,7 +196,7 @@
               </div>
             </div>
             <p class="base_text font-bold">Twitter・noteでブランディング・集客したい</p>
-            <p class="base_text">noteの企画・立ち上げから記事の作成を支援いただき、半年間で30記事以上をアップできました。Twitter運用もマーケティングの視点でフォローいただき助かっています。それらの反響から案件の獲得・売上アップの実績につながり、費用対効果を感じています。おかげでクライアントと良好な関係を築けています。</p>
+            <p class="base_text">noteの企画・立ち上げから記事の作成を支援いただき、半年間で30記事以上をアップできました。Twitter運用もマーケティングの視点でフォローいただき、それらの反響から案件の獲得・売上アップにつながり、費用対効果も感じています。</p>
           </div>
           <div class="bg-primaryPale space-y-4 p-3 sm:p-4 rounded">
             <div class="flex items-center space-x-4">
@@ -327,9 +351,13 @@
           <dt class="base_text font-bold w-3/12 sm:w-2/12">資本金</dt>
           <dd class="base_text w-9/12 sm:w-10/12">5,000,000円</dt>
         </div>
-        <div class="flex border-t border-b border-blank py-4">
+        <div class="flex border-t border-blank py-4">
           <dt class="base_text font-bold w-3/12 sm:w-2/12">事業内容</dt>
           <dd class="base_text w-9/12 sm:w-10/12">SNS・Web活用のオンラインコーチ</dt>
+        </div>
+        <div class="flex border-t border-b border-blank py-4">
+          <dt class="base_text font-bold w-3/12 sm:w-2/12">認定資格</dt>
+          <dd class="base_text w-9/12 sm:w-10/12">情報処理支援機関「スマートSMEサポーター」（経済産業省認定）</dt>
         </div>
       </dl>
 
@@ -338,7 +366,7 @@
           <%= image_tag 'ceo.png',class: "rounded-full" %>
           <div class="space-y-2 sm:space-y-3">
             <p class="base_text">代表取締役 <br class="sm:hidden">小松 遊気</p>
-            <p class="base_text text-left hidden sm:block">2010年4月よりnetベンチャーにてECコンサルティング事業に携わる。<br>2011年11月よりリクルートへ入社し中小企業〜大手企業の事業開発・マーケティングを支援し累計100社以上と取引し7年勤務。Web制作・広告運用のプロジェクトマネジャーとして担当部門のトップクライアントを担当後、マネジメントと企画職を兼務。<br>2019年1月より独立し、Webサービス「Member」を立ち上げ東証マザーズ上場企業グループへ事業売却。<br>Web業界の仕事を10年経験（Webエンジニア・デザイナー・マーケター・セールス）してきた挫折と成功体験からIT Coachを創業。</p>
+            <p class="base_text text-left hidden sm:block">2010年4月よりnetベンチャーにてECコンサルティング事業に携わる。<br>2011年11月よりリクルートへ入社し7年勤務。中小〜大手企業の広告・マーケティングを支援し累計100社以上と取引を行う。Web制作・広告運用のプロジェクトマネジャーとして担当部門のトップクライアントを担当後、マネジメントと企画職を兼務。<br>2019年1月より独立し、Webサービス「Member」を立ち上げ東証マザーズ上場企業グループへ事業売却。<br>Web業界の仕事を10年経験（Webエンジニア・デザイナー・マーケター・セールス）してきた挫折と成功体験からIT Coachを創業。</p>
           </div>
         </div>
         <div class="flex items-end space-x-4 min-w-max">
