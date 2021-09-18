@@ -4,13 +4,10 @@ class Itcoach::EntriesController < ApplicationController
 
   def show
     @form = Entry.new
-    @form.careers.build if @form.careers.blank?
-    @form.portfolios.build if @form.portfolios.blank?
   end
 
   def create
     @form = Entry.new(entry_params)
-    @form.portfolios.build if @form.portfolios.blank?
     if @form.valid?
       @form.save
       Emails::User.entry(@form).deliver_now
@@ -23,7 +20,7 @@ class Itcoach::EntriesController < ApplicationController
 
   private
   def entry_params
-    params.require(:entry).permit(:name, :email, :telephone, :specialty, :minimum_fee_id, :max_fee_id, :privacy, :other, category_ids: [], source_route_ids: [], careers_attributes: [:id, :event_id, :organization, :role, :start_month, :end_month, :_destroy], portfolios_attributes: [:id, :event_id, :title, :url, :_destroy])
+    params.require(:entry).permit(:name, :email, :telephone, :specialty, :privacy, :other,:minimum_fee_id, :max_fee_id,category_ids: [], source_route_ids: [])
   end
 
 end

@@ -23,6 +23,6 @@ class ContactsController < ApplicationController
   private
 
   def contact_parmas
-    params.require(:forms_contact_form).permit(:name, :company, :role, :email, :telephone, :will, :budget, :tech_ability, :business_manner, :communication_ability, :other, :privacy, category_ids: [], source_route_ids: [])
+    params.require(:forms_contact_form).permit(:name, :company, :role, :email, :telephone, :budget, :other, :privacy, source_route_ids: [])
   end
 end

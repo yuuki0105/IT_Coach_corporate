@@ -21,26 +21,7 @@
 <%= source_route.title %>
 <% end %>
 
-ITコーチに相談したいジャンル （複数選択可）
-<% BigCategory.all.each do |big_category| %>
-  [<%= big_category.name %>]
-  <% @contact.categories.where(big_category_id: big_category.id).each do |category| %>
-    <%= category.name %>
-  <% end %>
-<% end %>
-
-ITコーチを活用し実現したいこと
-<%= @contact.will %>
-
-予算 （SNS・EC・Webの制作・開発・広告などの月額予算目安）
-<%= @contact.budget.range %>
-
-ITコーチに求める能力
-技術力<%= @contact.tech_ability.name %>
-ビジネスマナー<%= @contact.business_manner.name %>
-コミュニケーション能力<%= @contact.communication_ability.name %>
-
-その他
+問い合わせ
 <%= @contact.other %>
 
 
