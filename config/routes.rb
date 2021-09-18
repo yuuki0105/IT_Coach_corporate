@@ -8,6 +8,12 @@ Rails.application.routes.draw do
   resource :contact,only: [:show, :create]
   resource :contact_complete,only: [:show]
 
+  resource :document_request,only: [:show, :create]
+  resource :document_request_complete,only: [:show]
+
+  resource :free_consultation,only: [:show, :create]
+  resource :free_consultation_complete,only: [:show]
+
   namespace :itcoach do
     resource :recruitment,only: [:show]
     resource :entry,only: [:show, :create]
