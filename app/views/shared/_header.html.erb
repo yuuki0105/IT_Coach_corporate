@@ -4,6 +4,12 @@
         <%= image_tag 'logo.png' , class: "h-6 sm:h-full" %>
       <% end %>
     </div>
+    <div class="hidden sm:block">
+      <ul class="flex justify-between items-center space-x-6 font-bold">
+        <li><%= link_to "資料ダウンロード", document_request_path %></li>
+        <li><%= link_to "無料オンライン相談", free_consultation_path %></li>
+      </ul>
+    </div>
     <% if false %>
       <div class="flex space-x-2 sm:space-x-4">
 

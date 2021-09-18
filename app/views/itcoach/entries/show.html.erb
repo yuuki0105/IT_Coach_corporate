@@ -75,6 +75,8 @@ Webマーケティング,Web制作,ビジネスマナー,コミュニケーシ�
             </div>
         </div>
 
+        <% if false %>
+
         <div id="career" class="sm:w-6/12">
           <div class="flex items-center">
             <label class="form_label">キャリア</label>
@@ -98,6 +100,8 @@ Webマーケティング,Web制作,ビジネスマナー,コミュニケーシ�
           </div>
         </div>
 
+        <% end %>
+
         <div class="space-y-4">
           <div class="flex items-center">
             <%= form.label :specialty, "得意なこと", class: "form_label" %>
@@ -105,18 +109,23 @@ Webマーケティング,Web制作,ビジネスマナー,コミュニケーシ�
           </div>
           <%= form.text_area :specialty, rows: 5, placeholder: "（例1）Instagramで美容院・クリニックの集客支援をするのが得意です。\n（例2）ホームページ作成が得意です。20社以上のHPを主にWordpressでつくってきました。", class: "text_field w-full sm:w-6/12", id: "entry_specialty", maxlength: 255 %>
         </div>
+        <%= form.hidden_field :minimum_fee_id, value: MinimumFee.first.id %>
+        <%= form.hidden_field :max_fee_id, value: MaxFee.first.id %>
+        <% if false %>
 
-        <div class="space-y-4">
-          <div class="flex items-center">
-            <label class="form_label">希望時給</label>
-            <span class="sub_text">（必須）</span>
+          <div class="space-y-4">
+            <div class="flex items-center">
+              <label class="form_label">希望時給</label>
+              <span class="sub_text">（必須）</span>
+            </div>
+            <div class="sm:flex sm:items-center sm:w-6/12 space-y-2 sm:space-y-0 sm:space-x-4">
+              <%= form.select :minimum_fee_id, MinimumFee.all.pluck(:yen, :id), { prompt: "最低時給" }, class: "block text_field w-full bg-white", id: "entry_minimum_fee" %>
+              <p class="text-center">〜</p>
+              <%= form.select :max_fee_id, MaxFee.all.pluck(:yen, :id), { prompt: "最高時給" }, class: "block text_field w-full bg-white", id: "entry_max_fee" %>
+            </div>
           </div>
-          <div class="sm:flex sm:items-center sm:w-6/12 space-y-2 sm:space-y-0 sm:space-x-4">
-            <%= form.select :minimum_fee_id, MinimumFee.all.pluck(:yen, :id), { prompt: "最低時給" }, class: "block text_field w-full bg-white", id: "entry_minimum_fee" %>
-            <p class="text-center">〜</p>
-            <%= form.select :max_fee_id, MaxFee.all.pluck(:yen, :id), { prompt: "最高時給" }, class: "block text_field w-full bg-white", id: "entry_max_fee" %>
-          </div>
-        </div>
+
+        <% end %>
 
       <div class="space-y-4">
         <div class="flex items-center">

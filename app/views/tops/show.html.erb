@@ -5,11 +5,20 @@
       <h1 class="text-primary h1_text_top">SNS・Webマーケティングを<br>コーチがサポート</h1>
 
       <p class="base_text">「IT Coach」は<br>企業のSNSやWeb活用を<br>ITに強いコーチがサポートする<br class="sm:hidden">オンラインコーチサービスです。</p>
+      <div class="space-y-2">
+        <p class="base_text text-subtext text-sm">▼サービス紹介資料はこちら</p>
+        <%= link_to "資料ダウンロード", document_request_path, class: "button_gradation bg_gradation" %>
+      </div>
     </div>
+
     <div class="hidden sm:flex justify-between items-center pl-30">
       <div class="space-y-10">
         <h1 class="text-primary h1_text_top">SNS・Webマーケティングを<br>コーチがサポート</h1>
         <p class="base_text">「IT Coach」は企業のSNSやWeb活用を<br>ITに強いコーチがサポートする<br class="sm:hidden">オンラインコーチサービスです。</p>
+        <div class="space-y-2">
+          <p class="base_text text-center text-subtext text-sm">▼サービス紹介資料はこちら</p>
+          <%= link_to "資料ダウンロード", document_request_path, class: "button_gradation bg_gradation" %>
+        </div>
       </div>
       <%= image_tag 'main_visual_pc.png',class: "hidden sm:block w-2/5" %>
     </div>
@@ -319,9 +328,21 @@
         <div class="bg_primaryPale_textbox base_text p-2">契約・サービス提供</div>
       </div>
 
+      <div class="bg-white py-3 sm:py-6 px-5 sm:px-20 sm:space-x-2 sm:space-y-0 space-y-4 sm:flex justify-center">
+        <div class="w-full space-y-2">
+          <p class="base_text text-center text-subtext text-sm">▼資料ダウンロードはこちら</p>
+          <%= link_to "資料ダウンロード", document_request_path, class: "button_sub mx-auto", id: "tops_fixed_footer_document_request" %>
+        </div>
+        <div class="w-full space-y-2">
+          <p class="base_text text-center text-subtext text-sm">▼無料オンライン相談はこちら</p>
+          <%= link_to "無料オンライン相談", free_consultation_path, class: "button_main mx-auto", id: "tops_fixed_footer_free_consultation" %>
+        </div>
+      </div>
     </div>
 
-    <%= link_to "問い合わせ", contact_path, class: "button_gradation bg_gradation", id: "tops_service_contact" %>
+    <%#= link_to "問い合わせ", contact_path, class: "button_gradation bg_gradation", id: "tops_service_contact" %>
+
+
 
   </div>
   <%# サービスここまで　%>
@@ -465,11 +486,11 @@
 
 </div>
 
-<div class="fixed bottom-0 right-0 left-0">
-  <div class="bg-white py-3 sm:py-6 px-5 sm:px-30 space-y-4 sm:space-y-0 sm:space-x-20 sm:flex sm:justify-center">
-    <%#= link_to "ITコーチになる", itcoach_recruitment_path, class: "button_sub", id: "tops_fixed_footer_itcoach_recruitment" %>
-    <%#= link_to "問い合わせ", contact_path, class: "button_main", id: "tops_fixed_footer_contact" %>
+<div class="fixed sm:hidden bottom-0 right-0 left-0">
+  <div class="bg-white py-3 sm:py-6 px-5 sm:px-30 sm:space-y-0 space-x-2 flex justify-center text-sm">
+    <%= link_to "資料ダウンロード", document_request_path, class: "button_sub", id: "tops_fixed_footer_document_request" %>
+    <%= link_to "無料オンライン相談", free_consultation_path, class: "button_main", id: "tops_fixed_footer_free_consultation" %>
 
-    <%= link_to "問い合わせ", contact_path, class: "button_gradation bg_gradation", id: "tops_service_contact" %>
+    <%#= <%= link_to "問い合わせ", contact_path, class: "button_gradation bg_gradation", id: "tops_service_contact" %>
   </div>
 </div>

@@ -41,14 +41,10 @@ class Entry < ApplicationRecord
 
   validates :telephone , presence: true
   validates :specialty , presence: true, length: { maximum: 255 }
-  validates :minimum_fee_id , presence: true
-  validates :max_fee_id , presence: true
   validates :other , length: { maximum: 255 }
   validates :privacy , presence: true
   validates :categories , presence: true
   validates :source_routes , presence: true
-  validates :careers , presence: true
-  validates :portfolios , presence: true
 
   # Callbacks
 
