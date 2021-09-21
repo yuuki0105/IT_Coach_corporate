@@ -143,7 +143,7 @@
             <p class="sub_text mt-4">主要取り扱い補助金：持続化補助金・IT導入補助金・ものづくり補助金・事業再構築補助金など</p>
           </div>
         </div>
-        <p class="sub_text">※主要なジャンル・メディア・ツールを掲載しております。上記にないものでもIT関連であれば対応できますので、<br class="sm:hidden"><%= link_to "無料オンライン相談フォーム" ,free_consultation_path, class: "text-black underline cursor-pointer" %>より相談をお願いします。</p>
+        <p class="sub_text">※主要なジャンル・メディア・ツールを掲載しております。上記にないものでもIT関連であれば対応できますので、<br class="sm:hidden"><%= link_to "無料オンライン相談フォーム" ,free_consultation_path, class: "text-black underline cursor-pointer", id: "tops_service_genre_free_consultation" %>より相談をお願いします。</p>
       </div>
     </div>
 
@@ -318,7 +318,7 @@
             <dl>
           </div>
         </div>
-        <p class="sub_text text-center">※上記はあくまで例です。プロジェクトごとの見積もりのため、まずは<%= link_to "無料オンライン相談フォーム" ,free_consultation_path, class: "text-black underline cursor-pointer" %>よりオンライン相談にお申し込みください。</p>
+        <p class="sub_text text-center">※上記はあくまで例です。プロジェクトごとの見積もりのため、まずは<%= link_to "無料オンライン相談フォーム" ,free_consultation_path, class: "text-black underline cursor-pointer", id: "tops_service_fee_free_consultation" %>よりオンライン相談にお申し込みください。</p>
       </div>
     </div>
 
@@ -337,11 +337,11 @@
       <div class="bg-white py-3 sm:py-6 px-5 sm:px-20 sm:space-x-2 sm:space-y-0 space-y-4 sm:flex justify-center">
         <div class="w-full space-y-2">
           <p class="base_text text-center text-subtext text-sm">▼資料ダウンロードはこちら</p>
-          <%= link_to "資料ダウンロード", document_request_path, class: "button_sub mx-auto", id: "tops_service_document_request" %>
+          <%= link_to "資料ダウンロード", document_request_path, class: "button_sub mx-auto", id: "tops_service_flow_document_request" %>
         </div>
         <div class="w-full space-y-2">
           <p class="base_text text-center text-subtext text-sm">▼無料オンライン相談はこちら</p>
-          <%= link_to "無料オンライン相談", free_consultation_path, class: "button_main mx-auto", id: "tops_service_free_consultation" %>
+          <%= link_to "無料オンライン相談", free_consultation_path, class: "button_main mx-auto", id: "tops_service_flow_free_consultation" %>
         </div>
       </div>
     </div>
