@@ -8,7 +8,7 @@
       <p class="base_text">「IT Coach」は<br>企業のSNS・EC・Web活用を<br>ITに強いコーチがサポートする<br class="sm:hidden">オンラインコーチサービスです。</p>
       <div class="space-y-2">
         <p class="base_text text-subtext text-sm">▼サービス紹介資料はこちら</p>
-        <%= link_to "資料ダウンロード", document_request_path, class: "button_gradation bg_gradation" %>
+        <%= link_to "資料ダウンロード", document_request_path, class: "button_gradation bg_gradation", id: "tops_main_visual_document_request"  %>
       </div>
     </div>
 
@@ -18,7 +18,7 @@
         <p class="base_text">「IT Coach」は企業のSNS・EC・Web活用を<br>ITに強いコーチがサポートする<br class="sm:hidden">オンラインコーチサービスです。</p>
         <div class="space-y-2">
           <p class="base_text text-center text-subtext text-sm">▼サービス紹介資料はこちら</p>
-          <%= link_to "資料ダウンロード", document_request_path, class: "button_gradation bg_gradation" %>
+          <%= link_to "資料ダウンロード", document_request_path, class: "button_gradation bg_gradation", id: "tops_main_visual_document_request"  %>
         </div>
       </div>
       <%= image_tag 'main_visual_pc.png',class: "hidden sm:block w-2/5" %>
@@ -337,11 +337,11 @@
       <div class="bg-white py-3 sm:py-6 px-5 sm:px-20 sm:space-x-2 sm:space-y-0 space-y-4 sm:flex justify-center">
         <div class="w-full space-y-2">
           <p class="base_text text-center text-subtext text-sm">▼資料ダウンロードはこちら</p>
-          <%= link_to "資料ダウンロード", document_request_path, class: "button_sub mx-auto", id: "tops_fixed_footer_document_request" %>
+          <%= link_to "資料ダウンロード", document_request_path, class: "button_sub mx-auto", id: "tops_service_document_request" %>
         </div>
         <div class="w-full space-y-2">
           <p class="base_text text-center text-subtext text-sm">▼無料オンライン相談はこちら</p>
-          <%= link_to "無料オンライン相談", free_consultation_path, class: "button_main mx-auto", id: "tops_fixed_footer_free_consultation" %>
+          <%= link_to "無料オンライン相談", free_consultation_path, class: "button_main mx-auto", id: "tops_service_free_consultation" %>
         </div>
       </div>
     </div>
