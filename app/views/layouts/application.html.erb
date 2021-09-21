@@ -69,10 +69,10 @@
     <% if content_for? :meta_description %>
       <meta name="description" content="<%= yield :meta_description %>">
     <% else %>
-      <meta name="description" content="株式会社IT Coachのコーポレイトサイトです。">
+      <meta name="description" content="株式会社IT Coachのサービスサイトです。">
     <% end %>
 
-    <meta name="keywords" content="SNSマーケティング,EC・ネットショップ,Webマーケティング,Web制作,ITコーチ,ITコンサル,内製化,インハウス<%= yield :meta_keywords if content_for? :meta_keywords %>" />
+    <meta name="keywords" content="SNS運用,SNSマーケティング,ECサイト・ネットショップ,ECサイト制作,Webマーケティング,Web制作,ITコーチ,ITコンサル,Webコンサル,内製化,インハウス<%= yield :meta_keywords if content_for? :meta_keywords %>" />
     <meta property="og:site_name" content="IT Coach">
 
     <meta property="og:type" content="website">
@@ -87,7 +87,7 @@
     <% if content_for? :og_description %>
       <meta property="og:description" content="<%= yield :og_description %>" />
     <% else %>
-      <meta property="og:description" content="SNS・EC・WebマーケティングにプロのITコーチが伴走" />
+      <meta property="og:description" content="SNS・EC・Webの制作・マーケティングにプロのITコーチが伴走" />
     <% end %>
 
     <!-- OGP -->
